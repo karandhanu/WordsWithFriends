@@ -106,6 +106,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" id="eyS-o7-Z3O"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="High Scores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YX-AM-c0a">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -124,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkl-Mg-NzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147" y="788"/>
+            <point key="canvasLocation" x="160" y="882"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pc7-p4-O8I">
@@ -225,6 +228,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eme-oR-ycn"/>
+        <segue reference="eyS-o7-Z3O"/>
     </inferredMetricsTieBreakers>
 </document>
