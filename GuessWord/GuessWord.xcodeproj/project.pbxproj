@@ -25,6 +25,7 @@
 		D620764F16320A3500337739 /* GuessWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D620764E16320A3500337739 /* GuessWordTests.m */; };
 		D620765916320B0F00337739 /* Sail-Forward.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D620765816320B0F00337739 /* Sail-Forward.jpg */; };
 		D620765B16320B2C00337739 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D620765A16320B2C00337739 /* icon.png */; };
+		D6FDDDC5163F1132008A26EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FDDDC4163F1132008A26EC /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		D620764E16320A3500337739 /* GuessWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessWordTests.m; sourceTree = "<group>"; };
 		D620765816320B0F00337739 /* Sail-Forward.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sail-Forward.jpg"; sourceTree = "<group>"; };
 		D620765A16320B2C00337739 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D6FDDDC3163F1132008A26EC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D6FDDDC4163F1132008A26EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				D620763816320A3500337739 /* ViewController.h */,
 				D620763916320A3500337739 /* ViewController.m */,
 				D620762416320A3500337739 /* Supporting Files */,
+				D6FDDDC3163F1132008A26EC /* GameViewController.h */,
+				D6FDDDC4163F1132008A26EC /* GameViewController.m */,
 			);
 			path = GuessWord;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				D620762A16320A3500337739 /* main.m in Sources */,
 				D620762E16320A3500337739 /* AppDelegate.m in Sources */,
 				D620763A16320A3500337739 /* ViewController.m in Sources */,
+				D6FDDDC5163F1132008A26EC /* GameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +461,7 @@
 				D620765416320A3500337739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D620765516320A3500337739 /* Build configuration list for PBXNativeTarget "GuessWordTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +470,7 @@
 				D620765716320A3500337739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
