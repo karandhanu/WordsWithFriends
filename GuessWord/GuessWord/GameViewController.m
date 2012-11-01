@@ -15,6 +15,7 @@
 @implementation GameViewController
 
 @synthesize display = _display;
+@synthesize displayTotalTries = _displayTotalTries;
 
 NSMutableString *gameWord ;
 int TotalNumberOfTriesLeft = 0;
@@ -45,11 +46,24 @@ BOOL doesEnterLetterMatch = false;
     // Dispose of any resources that can be recreated.
 }
 
+//this method initailized total number of tries
 - (void) CreateTotalNumberOfTriesForWord
 {
     TotalNumberOfTriesLeft = [gameWord length]/2;
+    UILabel *TriesDisplay = self.displayTotalTries;
+    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", TotalNumberOfTriesLeft];
+    TriesDisplay.text = TotalTriesAvailable;
 }
 
+//This method updates the number of tries left to complete a word
+-(void) UpdateTotalNumberofTriesForWord
+{
+    TotalNumberOfTriesLeft--;
+    UILabel *TriesDisplay = self.displayTotalTries;
+    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", TotalNumberOfTriesLeft];
+    TriesDisplay.text = TotalTriesAvailable;
+    
+}
 //1. get the letter pressed
 //2. check if letter pressed exists in the word
 //3. display at the letter in the each label it corrsespondes to
@@ -132,8 +146,8 @@ BOOL doesEnterLetterMatch = false;
         else
         {
             //reduce the total number tries by 1
-            TotalNumberOfTriesLeft--;
             
+            [self UpdateTotalNumberofTriesForWord];
             UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
             //diabled the button
             [sender setEnabled:NO];
@@ -144,6 +158,7 @@ BOOL doesEnterLetterMatch = false;
         
         }
     }
+    //what to do what to do
     else
     {
         
