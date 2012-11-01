@@ -17,7 +17,8 @@
 @synthesize display = _display;
 
 NSMutableString *gameWord ;
-
+int TotalNumberOfTriesLeft = 0;
+BOOL doesEnterLetterMatch = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +35,7 @@ NSMutableString *gameWord ;
     // Do any additional setup after loading the view.
     //initializing
     gameWord = [NSMutableString stringWithFormat:@"karan"];
+    [self CreateTotalNumberOfTriesForWord];
 	
 }
 
@@ -41,6 +43,11 @@ NSMutableString *gameWord ;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) CreateTotalNumberOfTriesForWord
+{
+    TotalNumberOfTriesLeft = [gameWord length]/2;
 }
 
 //1. get the letter pressed
@@ -90,7 +97,7 @@ NSMutableString *gameWord ;
         
     }
     
-    BOOL doesEnterLetterMatch = false;
+    
     
     for ( int x = 0;  x < [lettersArray count] ; x++) {
         
@@ -101,25 +108,45 @@ NSMutableString *gameWord ;
         
         
     }
-    if(doesEnterLetterMatch)
+    if(TotalNumberOfTriesLeft > 0)
     {
-        UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
+        if(doesEnterLetterMatch)
+        {
+            UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
         //UIImage *buttonImagePressed = [[UIImage imageNamed:@"icon.png"]
         //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
         
+            doesEnterLetterMatch = false;
+            myDisplay.text =  letter;
+            
+            //disabled the button
+            [sender setEnabled:NO];
+            
+            //set the back groundcolor
+            [sender setBackgroundColor:[UIColor greenColor]];
+            
+            //set the background image
+            [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
         
-        myDisplay.text =  letter;
-        [sender setEnabled:NO];
-        [sender setBackgroundColor:[UIColor redColor]];
+        }
+        else
+        {
+            //reduce the total number tries by 1
+            TotalNumberOfTriesLeft--;
+            
+            UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
+            //diabled the button
+            [sender setEnabled:NO];
+            //set the background coloe
+            [sender setBackgroundColor:[UIColor redColor]];
+            //set background color
+            [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
         
-        [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
-        
+        }
     }
     else
     {
-        [sender setEnabled:NO];
-        [sender setBackgroundColor:[UIColor redColor]];
-        // NSLog(@"Letter does not exisit in the word");
+        
     }
 }
 
