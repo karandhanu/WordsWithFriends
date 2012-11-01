@@ -32,7 +32,7 @@ NSMutableString *gameWord ;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //initializing 
+    //initializing
     gameWord = [NSMutableString stringWithFormat:@"karan"];
 	
 }
@@ -51,37 +51,33 @@ NSMutableString *gameWord ;
     //pointer to a string object
     NSString *letter = [sender currentTitle];
     
-    //NSLog(@"my ns string = %@", letter);
-    
     //create a local label
     UILabel *myDisplay = self.display;
     
     //returns what is on the label
     //NSString *currentText= myDisplay.text;
     //NSString *newText = [currentText stringByAppendingString:digit];
-    for (int i = 0; i <= gameWord.length; i++) {
-        
-         
-        //NSLog(@"my ns string = %@", testChar);
-        //var s = [globalString characterAtIndex:i];
-        //if([globalString characterAtIndex:i == digit.cString])
-        
-        //const unsigned char *newLetter = (const unsigned char *) [letter UTF8String];
-        //skif(testChar == newLetter)
-        
-    }
-    unsigned int len = [letter length];
-    char buffer[len + 1];
+    //for (int i = 0; i <= gameWord.length; i++) {
     
-    strncpy(buffer, [letter UTF8String],len);
- 
-
-    char current;
-    for(int i = 0; i < len; ++i) {
-        current = buffer[i];
-        //NSLog(@"my ns string = %c", current);
-        //convert nsmutablestring to nsmutablearray
-    }
+    //var s = [globalString characterAtIndex:i];
+    //if([globalString characterAtIndex:i == digit.cString])
+    
+    //const unsigned char *newLetter = (const unsigned char *) [letter UTF8String];
+    //skif(testChar == newLetter)
+    
+    //}
+    //unsigned int len = [letter length];
+    //char buffer[len + 1];
+    
+    //strncpy(buffer, [letter UTF8String],len);
+    
+    
+    //char current;
+    //for(int i = 0; i < len; ++i) {
+    //  current = buffer[i];
+    //NSLog(@"my ns string = %c", current);
+    //convert nsmutablestring to nsmutablearray
+    //}
     
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
@@ -91,29 +87,40 @@ NSMutableString *gameWord ;
         NSMutableString *eachLetter = [[NSMutableString alloc]initWithFormat:@"%C",[gameWord characterAtIndex:x]];
         
         [lettersArray addObject:eachLetter];
-        //[eachLetter release];
-        //NSLog(@"my ns string = %@", eachLetter);
+        
     }
     
+    BOOL doesEnterLetterMatch = false;
     
     for ( int x = 0;  x < [lettersArray count] ; x++) {
         
-       // NSLog(@"Value of subArray: %@ at index: %d", [[lettersArray objectAtIndex:x] ], x);
-        // do something with object
-        //NSLog(@"%@",[lettersArray objectAtIndex: x]);
-        //NSLog(@"my ns string = %@", letter.lowercaseString);
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
-            
-            NSLog(@"inside if loop");
+            doesEnterLetterMatch = true;
         }
-        else
-        {
-            NSLog(@"elemet is not inside the loop");
-        }
-       
+        
+        
     }
-    myDisplay.text =  letter;
+    if(doesEnterLetterMatch)
+    {
+        UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
+        //UIImage *buttonImagePressed = [[UIImage imageNamed:@"icon.png"]
+        //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
+        
+        
+        myDisplay.text =  letter;
+        [sender setEnabled:NO];
+        [sender setBackgroundColor:[UIColor redColor]];
+        
+        [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
+        
+    }
+    else
+    {
+        [sender setEnabled:NO];
+        [sender setBackgroundColor:[UIColor redColor]];
+        // NSLog(@"Letter does not exisit in the word");
+    }
 }
 
 @end

@@ -17,15 +17,15 @@
          landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/GameViewController.m"
-         timestampString = "373413889.676517"
+         timestampString = "373421365.456568"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-buttonPressed:"
          landmarkType = "5">
       </FileBreakpoint>
