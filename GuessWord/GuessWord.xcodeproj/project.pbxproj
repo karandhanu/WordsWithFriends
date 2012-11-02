@@ -28,6 +28,10 @@
 		D6AB3D9A1641F58800CEF025 /* King.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D991641F58800CEF025 /* King.png */; };
 		D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9C1642055100CEF025 /* incorrect.png */; };
 		D6AB3D9F16435BB300CEF025 /* Document in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9E16435BB300CEF025 /* Document */; };
+		D6AB3DA41644412B00CEF025 /* 220px-Color_icon_yellow.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */; };
+		D6AB3DA51644412B00CEF025 /* Color_icon_blue.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */; };
+		D6AB3DA61644412B00CEF025 /* Color_icon_green.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */; };
+		D6AB3DA71644412B00CEF025 /* Color_icon_red.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */; };
 		D6FDDDC5163F1132008A26EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FDDDC4163F1132008A26EC /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		D6AB3D991641F58800CEF025 /* King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King.png; sourceTree = "<group>"; };
 		D6AB3D9C1642055100CEF025 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D6AB3D9E16435BB300CEF025 /* Document */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Document; path = GuessWord/Document; sourceTree = "<group>"; };
+		D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "220px-Color_icon_yellow.svg.png"; sourceTree = "<group>"; };
+		D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_blue.svg.png; sourceTree = "<group>"; };
+		D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_green.svg.png; sourceTree = "<group>"; };
+		D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_red.svg.png; sourceTree = "<group>"; };
 		D6FDDDC3163F1132008A26EC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		D6FDDDC4163F1132008A26EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +108,10 @@
 		D620760E16320A3500337739 = {
 			isa = PBXGroup;
 			children = (
+				D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */,
+				D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */,
+				D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */,
+				D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */,
 				D6AB3D9E16435BB300CEF025 /* Document */,
 				D6AB3D9C1642055100CEF025 /* incorrect.png */,
 				D6AB3D991641F58800CEF025 /* King.png */,
@@ -261,6 +273,10 @@
 				D6AB3D9A1641F58800CEF025 /* King.png in Resources */,
 				D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */,
 				D6AB3D9F16435BB300CEF025 /* Document in Resources */,
+				D6AB3DA41644412B00CEF025 /* 220px-Color_icon_yellow.svg.png in Resources */,
+				D6AB3DA51644412B00CEF025 /* Color_icon_blue.svg.png in Resources */,
+				D6AB3DA61644412B00CEF025 /* Color_icon_green.svg.png in Resources */,
+				D6AB3DA71644412B00CEF025 /* Color_icon_red.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

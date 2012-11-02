@@ -22,3 +22,6 @@
     //NSLog(@"my ns string = %c", current);
     //convert nsmutablestring to nsmutablearray
     //}
+http://stackoverflow.com/questions/4421349/iphone-json-iterate-nsarray-and-get-values
+
+this is json itrator

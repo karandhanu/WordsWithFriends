@@ -20,11 +20,15 @@
 
 NSMutableString *gameWord ;
 
+NSArray *allWords;
+
 int TotalNumberOfTriesLeft = 0;
 
 BOOL doesEnterLetterMatch = false;
 
 int wordComplete = 0;
+
+int playAgainCount = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +45,9 @@ int wordComplete = 0;
     // Do any additional setup after loading the view.
     //initializing
     gameWord = [NSMutableString stringWithFormat:@"pants"];
+    
+    allWords = [NSArray arrayWithObjects:@"hello",@"this",@"world",@"etc",nil];
+    
     [self CreateTotalNumberOfTriesForWord];
     [self DisplayLabels];
 	
@@ -82,6 +89,21 @@ int wordComplete = 0;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
     
+    [myDisplay setHidden:YES];
+    [myDisplay2 setHidden:YES];
+    [myDisplay3 setHidden:YES];
+    [myDisplay4 setHidden:YES];
+    [myDisplay5 setHidden:YES];
+    [myDisplay6 setHidden:YES];
+    
+    [myDisplay setText:@""];
+    [myDisplay2 setText:@""];
+    [myDisplay3 setText:@""];
+    [myDisplay4 setText:@""];
+    [myDisplay5 setText:@""];
+    [myDisplay6 setText:@""];
+    
+    
     if(wordLength == 3)
     {
         [myDisplay setHidden:NO];
@@ -114,6 +136,19 @@ int wordComplete = 0;
         
     }
 }
+- (IBAction)playAgain:(id)sender
+{
+    if(playAgainCount < ([allWords count] -1))
+    {
+        [sender setEnabled:YES];
+        playAgainCount++;
+        gameWord = [allWords objectAtIndex:playAgainCount];
+    
+        [self CreateTotalNumberOfTriesForWord];
+        [self DisplayLabels];
+    }
+    
+}
 
 //1. get the letter pressed
 //2. check if letter pressed exists in the word
@@ -131,7 +166,11 @@ int wordComplete = 0;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
     
-        
+    //for (int totalNumberofWords = 0; totalNumberofWords <= [allWords count]; totalNumberofWords++) {
+      //  [allWords objectAtIndex:totalNumberofWords];
+       
+    //}
+    
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
@@ -154,12 +193,12 @@ int wordComplete = 0;
             doesEnterLetterMatch = true;
             
             //remove item from the array once we found it
-            [lettersArray removeObjectAtIndex:x];
-            wordComplete = [lettersArray count];
+            //[lettersArray removeObjectAtIndex:x];
+            wordComplete++;
         }
     }
     
-    if(wordComplete > 0)
+    if(wordComplete != [lettersArray count])
     {
         if(TotalNumberOfTriesLeft > 0)
         {
@@ -207,7 +246,7 @@ int wordComplete = 0;
                 [sender setBackgroundColor:[UIColor greenColor]];
                 
                 //set the background image
-                [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
+                //[sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
                 
             }
             else
@@ -215,13 +254,13 @@ int wordComplete = 0;
                 //reduce the total number tries by 1
                 
                 [self UpdateTotalNumberofTriesForWord];
-                UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
+                //UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
                 //diabled the button
                 [sender setEnabled:NO];
                 //set the background coloe
                 [sender setBackgroundColor:[UIColor redColor]];
                 //set background color
-                [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
+                //[sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
                 
             }
         }
@@ -233,11 +272,20 @@ int wordComplete = 0;
             
         }
     }
-    //means user completed the word move to the next word
     else
     {
         
     }
+    //means user completed the word move to the next word
+//    if(wordComplete == 0)
+//    {
+//        [myDisplay setHidden:YES];
+//        [myDisplay2 setHidden:YES];
+//        [myDisplay3 setHidden:YES];
+//        [myDisplay4 setHidden:YES];
+//        [myDisplay5 setHidden:YES];
+//        [myDisplay6 setHidden:YES];
+//    }
     
 }
 
