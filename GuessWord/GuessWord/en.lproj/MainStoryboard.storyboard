@@ -172,7 +172,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZxX-Kd-nKo">
                                 <rect key="frame" x="67" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="B" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,7 +186,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ajJ-W6-JdN">
                                 <rect key="frame" x="265" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="G" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,7 +200,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yvO-fb-ack">
                                 <rect key="frame" x="225" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="M" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +214,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="spr-lY-l4O">
                                 <rect key="frame" x="266" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="N" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,7 +228,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zmq-8E-C8d">
                                 <rect key="frame" x="29" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="A" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,7 +249,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SVy-HU-QHs">
                                 <rect key="frame" x="105" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="C" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -263,7 +263,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8o3-9b-3iq">
                                 <rect key="frame" x="145" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="D" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,7 +277,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5dD-J2-Bqh">
                                 <rect key="frame" x="225" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="F" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -291,7 +291,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Tq-Va-mSq">
                                 <rect key="frame" x="187" y="311" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="E" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -305,7 +305,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="k1D-Ue-j9j">
                                 <rect key="frame" x="67" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="I" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,8 +318,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HKv-Ou-Oif">
-                                <rect key="frame" x="29" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="29" y="349" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="H" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,7 +333,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="996-o6-ngQ">
                                 <rect key="frame" x="105" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="J" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,7 +347,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q9z-5H-BJt">
                                 <rect key="frame" x="145" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="K" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -361,7 +361,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4hq-K4-DPX">
                                 <rect key="frame" x="187" y="347" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="L" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -375,7 +375,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ugv-Ec-HxB">
                                 <rect key="frame" x="225" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="T" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -389,7 +389,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yHC-fv-rtm">
                                 <rect key="frame" x="267" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="U" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -403,7 +403,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RAS-b8-Bkd">
                                 <rect key="frame" x="67" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="P" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -417,7 +417,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gEl-we-dyR">
                                 <rect key="frame" x="29" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="O" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -431,7 +431,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GcJ-so-rvs">
                                 <rect key="frame" x="105" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Q" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -445,7 +445,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZZt-EF-crF">
                                 <rect key="frame" x="145" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="R" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -459,7 +459,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ywp-2D-af6">
                                 <rect key="frame" x="187" y="382" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="S" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -473,7 +473,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="frc-Z3-XEr">
                                 <rect key="frame" x="67" y="417" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="W" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -487,7 +487,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AL3-Ng-XQ5">
                                 <rect key="frame" x="29" y="417" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="V" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,7 +501,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZZd-Nb-ZZn">
                                 <rect key="frame" x="105" y="417" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="X" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -515,7 +515,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lBf-Cd-11N">
                                 <rect key="frame" x="145" y="417" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Y" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -529,7 +529,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sPN-On-IMK">
                                 <rect key="frame" x="187" y="417" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Z" backgroundImage="220px-Color_icon_yellow.svg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -591,10 +591,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Xw-Bf-eoj">
-                                <rect key="frame" x="105" y="119" width="101" height="44"/>
+                                <rect key="frame" x="106" y="111" width="99" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play Again">
+                                <state key="normal" title="Next Word">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -616,6 +616,32 @@
                         <outlet property="display5" destination="kqD-In-1UD" id="c9i-TR-TaO"/>
                         <outlet property="display6" destination="jSR-Uv-J1b" id="vzW-pV-ang"/>
                         <outlet property="displayTotalTries" destination="GuL-aD-BAg" id="lZ4-PH-BiV"/>
+                        <outlet property="letter1" destination="Zmq-8E-C8d" id="nL2-jH-Pek"/>
+                        <outlet property="letter10" destination="996-o6-ngQ" id="gqy-0A-ANM"/>
+                        <outlet property="letter11" destination="q9z-5H-BJt" id="bqm-MK-JeW"/>
+                        <outlet property="letter12" destination="4hq-K4-DPX" id="8O6-N8-dZn"/>
+                        <outlet property="letter13" destination="yvO-fb-ack" id="ny1-HW-xgf"/>
+                        <outlet property="letter14" destination="spr-lY-l4O" id="WU9-yD-LOQ"/>
+                        <outlet property="letter15" destination="gEl-we-dyR" id="BI7-L9-H3D"/>
+                        <outlet property="letter16" destination="RAS-b8-Bkd" id="nVP-or-GqO"/>
+                        <outlet property="letter17" destination="GcJ-so-rvs" id="BCf-qy-kXN"/>
+                        <outlet property="letter18" destination="ZZt-EF-crF" id="xVW-dn-Ngb"/>
+                        <outlet property="letter19" destination="Ywp-2D-af6" id="nfE-Zb-HpL"/>
+                        <outlet property="letter2" destination="ZxX-Kd-nKo" id="YdH-Kc-fGd"/>
+                        <outlet property="letter20" destination="Ugv-Ec-HxB" id="0aJ-hw-Sdm"/>
+                        <outlet property="letter21" destination="yHC-fv-rtm" id="hoC-Sj-Ycf"/>
+                        <outlet property="letter22" destination="AL3-Ng-XQ5" id="D69-pI-m6B"/>
+                        <outlet property="letter23" destination="frc-Z3-XEr" id="8uU-oS-K2F"/>
+                        <outlet property="letter24" destination="ZZd-Nb-ZZn" id="0W2-em-Ol4"/>
+                        <outlet property="letter25" destination="lBf-Cd-11N" id="Ocv-XD-PSa"/>
+                        <outlet property="letter26" destination="sPN-On-IMK" id="THX-SO-jXg"/>
+                        <outlet property="letter3" destination="SVy-HU-QHs" id="X3S-uU-2Wq"/>
+                        <outlet property="letter4" destination="8o3-9b-3iq" id="THU-2f-R1d"/>
+                        <outlet property="letter5" destination="4Tq-Va-mSq" id="GDG-Je-Xau"/>
+                        <outlet property="letter6" destination="5dD-J2-Bqh" id="nkv-MI-1UP"/>
+                        <outlet property="letter7" destination="ajJ-W6-JdN" id="05A-zb-EMS"/>
+                        <outlet property="letter8" destination="HKv-Ou-Oif" id="TCk-0h-Cn3"/>
+                        <outlet property="letter9" destination="k1D-Ue-j9j" id="i9Y-OP-ofG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfl-Ow-y5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -631,8 +657,6 @@
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="playAgain:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
@@ -640,6 +664,32 @@
                 <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter10" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter11" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter12" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter13" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter14" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter15" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter16" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter17" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter18" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter19" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter20" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter21" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter22" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter23" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter24" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter25" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter26" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

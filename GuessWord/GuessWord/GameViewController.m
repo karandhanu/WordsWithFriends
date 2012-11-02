@@ -17,8 +17,34 @@
 @synthesize display = _display;
 @synthesize display2 = _display2;
 @synthesize displayTotalTries = _displayTotalTries;
+@synthesize letter1 = _letter1;
+@synthesize letter2 = _letter2;
+@synthesize letter3 = _letter3;
+@synthesize letter4 = _letter4;
+@synthesize letter5 = _letter5;
+@synthesize letter6 = _letter6;
+@synthesize letter7 = _letter7;
+@synthesize letter8 = _letter8;
+@synthesize letter9 = _letter9;
+@synthesize letter10 = _letter10;
+@synthesize letter11 = _letter11;
+@synthesize letter12 = _letter12;
+@synthesize letter13 = _letter13;
+@synthesize letter14 = _letter14;
+@synthesize letter15 = _letter15;
+@synthesize letter16 = _letter16;
+@synthesize letter17 = _letter17;
+@synthesize letter18 = _letter18;
+@synthesize letter19 = _letter19;
+@synthesize letter20 = _letter20;
+@synthesize letter21 = _letter21;
+@synthesize letter22 = _letter22;
+@synthesize letter23 = _letter23;
+@synthesize letter24 = _letter24;
+@synthesize letter25 = _letter25;
+@synthesize letter26 = _letter26;
 
-NSMutableString *gameWord ;
+NSMutableString *gameWord;
 
 NSArray *allWords;
 
@@ -26,9 +52,11 @@ int TotalNumberOfTriesLeft = 0;
 
 BOOL doesEnterLetterMatch = false;
 
-int wordComplete = 0;
+int wordCompleteCount = 0;
 
 int playAgainCount = 0;
+
+bool isWordComplete = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,6 +104,36 @@ int playAgainCount = 0;
     NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", TotalNumberOfTriesLeft];
     TriesDisplay.text = TotalTriesAvailable;
     
+}
+
+-(void) EnableAllLetters
+{
+    _letter1.enabled =YES;
+    _letter2.enabled =YES;
+    _letter3.enabled =YES;
+    _letter4.enabled =YES;
+    _letter5.enabled =YES;
+    _letter6.enabled =YES;
+    _letter7.enabled =YES;
+    _letter8.enabled =YES;
+    _letter9.enabled =YES;
+    _letter10.enabled =YES;
+    _letter11.enabled =YES;
+    _letter12.enabled =YES;
+    _letter13.enabled =YES;
+    _letter14.enabled =YES;
+    _letter15.enabled =YES;
+    _letter16.enabled =YES;
+    _letter17.enabled =YES;
+    _letter18.enabled =YES;
+    _letter19.enabled =YES;
+    _letter20.enabled =YES;
+    _letter21.enabled =YES;
+    _letter22.enabled =YES;
+    _letter23.enabled =YES;
+    _letter24.enabled =YES;
+    _letter25.enabled =YES;
+    _letter26.enabled =YES;
 }
 
 //this displays all the labels
@@ -132,18 +190,26 @@ int playAgainCount = 0;
         [myDisplay3 setHidden:NO];
         [myDisplay4 setHidden:NO];
         [myDisplay5 setHidden:NO];
-        [myDisplay6 setHidden:NO];
-        
+        [myDisplay6 setHidden:NO];  
     }
 }
+
 - (IBAction)playAgain:(id)sender
+{
+    
+    [self MoveToNextWord];
+}
+
+-(void) MoveToNextWord
 {
     if(playAgainCount < ([allWords count] -1))
     {
-        [sender setEnabled:YES];
+        [self EnableAllLetters];
+        isWordComplete = false;
+        wordCompleteCount = 0;
         playAgainCount++;
         gameWord = [allWords objectAtIndex:playAgainCount];
-    
+        
         [self CreateTotalNumberOfTriesForWord];
         [self DisplayLabels];
     }
@@ -166,11 +232,6 @@ int playAgainCount = 0;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
     
-    //for (int totalNumberofWords = 0; totalNumberofWords <= [allWords count]; totalNumberofWords++) {
-      //  [allWords objectAtIndex:totalNumberofWords];
-       
-    //}
-    
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
@@ -183,31 +244,22 @@ int playAgainCount = 0;
         
     }
     
-    
-    
     for ( int x = 0;  x < [lettersArray count] ; x++) {
         
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
             trackIndexId = x;
             doesEnterLetterMatch = true;
-            
-            //remove item from the array once we found it
-            //[lettersArray removeObjectAtIndex:x];
-            wordComplete++;
+            wordCompleteCount++; 
         }
     }
     
-    if(wordComplete != [lettersArray count])
+    if(!isWordComplete)
     {
         if(TotalNumberOfTriesLeft > 0)
         {
             if(doesEnterLetterMatch)
             {
-                UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
-                //UIImage *buttonImagePressed = [[UIImage imageNamed:@"icon.png"]
-                //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
-                
                 doesEnterLetterMatch = false;
                 
                 if(trackIndexId == 0)
@@ -237,31 +289,21 @@ int playAgainCount = 0;
                 {
                     myDisplay6.text =  letter;
                 }
-               
                 
                 //disabled the button
                 [sender setEnabled:NO];
                 
                 //set the back groundcolor
-                [sender setBackgroundColor:[UIColor greenColor]];
-                
-                //set the background image
-                //[sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
-                
+                [sender setBackgroundColor:[UIColor greenColor]];                
             }
             else
             {
                 //reduce the total number tries by 1
-                
                 [self UpdateTotalNumberofTriesForWord];
-                //UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
                 //diabled the button
                 [sender setEnabled:NO];
-                //set the background coloe
-                [sender setBackgroundColor:[UIColor redColor]];
-                //set background color
-                //[sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
-                
+                //set the background color
+                [sender setBackgroundColor:[UIColor redColor]];                
             }
         }
         //what to do what to do
@@ -276,16 +318,22 @@ int playAgainCount = 0;
     {
         
     }
-    //means user completed the word move to the next word
-//    if(wordComplete == 0)
-//    {
-//        [myDisplay setHidden:YES];
-//        [myDisplay2 setHidden:YES];
-//        [myDisplay3 setHidden:YES];
-//        [myDisplay4 setHidden:YES];
-//        [myDisplay5 setHidden:YES];
-//        [myDisplay6 setHidden:YES];
-//    }
+    
+    if(wordCompleteCount == [lettersArray count])
+    {
+        isWordComplete = true;
+    }
+    
+    if(isWordComplete)
+    {
+        [myDisplay setHidden:YES];
+        [myDisplay2 setHidden:YES];
+        [myDisplay3 setHidden:YES];
+        [myDisplay4 setHidden:YES];
+        [myDisplay5 setHidden:YES];
+        [myDisplay6 setHidden:YES];
+        [self MoveToNextWord];
+    }
     
 }
 
