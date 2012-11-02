@@ -64,7 +64,7 @@ int playNextWordCounter = 0;
 bool isWordComplete = false;
 
 //total number of words user will complete
-int totalWorldComplete = 0;
+int totalWordCompletedCounter = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,7 +79,8 @@ int totalWorldComplete = 0;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //initializing
+    
+    //initializing first word
     gameWord = [NSMutableString stringWithFormat:@"pants"];
     
     //all the words
@@ -91,6 +92,7 @@ int totalWorldComplete = 0;
     [self displayLabels];
     wordCompleteCounter = 0;
     playNextWordCounter = 0;
+    totalWordCompletedCounter = 0;
 	
 }
 
@@ -230,8 +232,13 @@ int totalWorldComplete = 0;
     
 }
 
--(void) checkNumberofWordsUserCompleteInLevel
+-(void)checkNumberofWordsUserCompleteInLevel:(BOOL) completeWord
 {
+    if(completeWord)
+    {
+        totalWordCompletedCounter++;
+        NSLog(@"number of words complete %d", totalWordCompletedCounter);
+    }
     
 }
 //1. get the letter pressed
@@ -350,6 +357,7 @@ int totalWorldComplete = 0;
         [myDisplay4 setHidden:YES];
         [myDisplay5 setHidden:YES];
         [myDisplay6 setHidden:YES];
+        [self checkNumberofWordsUserCompleteInLevel:isWordComplete];
         [self moveToNextWord];
     }
     

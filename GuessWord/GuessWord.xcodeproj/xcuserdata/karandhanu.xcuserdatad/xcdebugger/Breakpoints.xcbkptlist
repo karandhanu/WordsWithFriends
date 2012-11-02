@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/GameViewController.m"
-         timestampString = "373590604.141143"
+         timestampString = "373591288.448766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "245"
-         endingLineNumber = "245"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "-buttonPressed:"
          landmarkType = "5">
       </FileBreakpoint>
