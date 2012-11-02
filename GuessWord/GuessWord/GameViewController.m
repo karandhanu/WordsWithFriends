@@ -15,11 +15,16 @@
 @implementation GameViewController
 
 @synthesize display = _display;
+@synthesize display2 = _display2;
 @synthesize displayTotalTries = _displayTotalTries;
 
 NSMutableString *gameWord ;
+
 int TotalNumberOfTriesLeft = 0;
+
 BOOL doesEnterLetterMatch = false;
+
+int wordComplete = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,8 +40,9 @@ BOOL doesEnterLetterMatch = false;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //initializing
-    gameWord = [NSMutableString stringWithFormat:@"karan"];
+    gameWord = [NSMutableString stringWithFormat:@"kran"];
     [self CreateTotalNumberOfTriesForWord];
+    [self DisplayLabels];
 	
 }
 
@@ -64,6 +70,51 @@ BOOL doesEnterLetterMatch = false;
     TriesDisplay.text = TotalTriesAvailable;
     
 }
+
+//this displays all the labels
+-(void) DisplayLabels
+{
+    int wordLength = [gameWord length];
+    UILabel *myDisplay = self.display;
+    UILabel *myDisplay2 = self.display2;
+    UILabel *myDisplay3 = self.display3;
+    UILabel *myDisplay4 = self.display4;
+    UILabel *myDisplay5 = self.display5;
+    UILabel *myDisplay6 = self.display6;
+    
+    if(wordLength == 3)
+    {
+        [myDisplay setHidden:NO];
+        [myDisplay2 setHidden:NO];
+        [myDisplay3 setHidden:NO];
+    }
+    else if(wordLength == 4)
+    {
+        [myDisplay setHidden:NO];
+        [myDisplay2 setHidden:NO];
+        [myDisplay3 setHidden:NO];
+        [myDisplay4 setHidden:NO];
+    }
+    else if (wordLength == 5)
+    {
+        [myDisplay setHidden:NO];
+        [myDisplay2 setHidden:NO];
+        [myDisplay3 setHidden:NO];
+        [myDisplay4 setHidden:NO];
+        [myDisplay5 setHidden:NO];
+    }
+    else if(wordLength == 6)
+    {
+        [myDisplay setHidden:NO];
+        [myDisplay2 setHidden:NO];
+        [myDisplay3 setHidden:NO];
+        [myDisplay4 setHidden:NO];
+        [myDisplay5 setHidden:NO];
+        [myDisplay6 setHidden:NO];
+        
+    }
+}
+
 //1. get the letter pressed
 //2. check if letter pressed exists in the word
 //3. display at the letter in the each label it corrsespondes to
@@ -117,51 +168,55 @@ BOOL doesEnterLetterMatch = false;
         
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
+            wordComplete++;
             doesEnterLetterMatch = true;
         }
         
         
     }
-    if(TotalNumberOfTriesLeft > 0)
+    if(wordComplete <= [lettersArray count])
     {
-        if(doesEnterLetterMatch)
+        if(TotalNumberOfTriesLeft > 0)
         {
-            UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
-        //UIImage *buttonImagePressed = [[UIImage imageNamed:@"icon.png"]
-        //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
-        
-            doesEnterLetterMatch = false;
-            myDisplay.text =  letter;
-            
-            //disabled the button
-            [sender setEnabled:NO];
-            
-            //set the back groundcolor
-            [sender setBackgroundColor:[UIColor greenColor]];
-            
-            //set the background image
-            [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
-        
+            if(doesEnterLetterMatch)
+            {
+                UIImage *buttonImagePressed = [UIImage imageNamed:@"King.png"];
+                //UIImage *buttonImagePressed = [[UIImage imageNamed:@"icon.png"]
+                //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
+                
+                doesEnterLetterMatch = false;
+                myDisplay.text =  letter;
+                
+                //disabled the button
+                [sender setEnabled:NO];
+                
+                //set the back groundcolor
+                [sender setBackgroundColor:[UIColor greenColor]];
+                
+                //set the background image
+                [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
+                
+            }
+            else
+            {
+                //reduce the total number tries by 1
+                
+                [self UpdateTotalNumberofTriesForWord];
+                UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
+                //diabled the button
+                [sender setEnabled:NO];
+                //set the background coloe
+                [sender setBackgroundColor:[UIColor redColor]];
+                //set background color
+                [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
+                
+            }
         }
+        //what to do what to do
         else
         {
-            //reduce the total number tries by 1
             
-            [self UpdateTotalNumberofTriesForWord];
-            UIImage *buttonImagePressed = [UIImage imageNamed:@"incorrect.png"];
-            //diabled the button
-            [sender setEnabled:NO];
-            //set the background coloe
-            [sender setBackgroundColor:[UIColor redColor]];
-            //set background color
-            [sender setBackgroundImage:buttonImagePressed forState:UIControlStateNormal];
-        
         }
-    }
-    //what to do what to do
-    else
-    {
-        
     }
 }
 
