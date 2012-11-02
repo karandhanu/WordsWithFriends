@@ -160,7 +160,6 @@ int wordComplete = 0;
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
     int trackIndexId;
-    
     for (int x = 0 ; x <= [gameWord length]-1 ; x++) {
         
         NSMutableString *eachLetter = [[NSMutableString alloc]initWithFormat:@"%C",[gameWord characterAtIndex:x]];
@@ -176,12 +175,15 @@ int wordComplete = 0;
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
             trackIndexId = x;
-            wordComplete++;
             doesEnterLetterMatch = true;
+            
+            //remove item from the array once we found it
+            [lettersArray removeObjectAtIndex:x];
+            wordComplete = [lettersArray count];
         }
     }
     
-    if(wordComplete <= [lettersArray count])
+    if(wordComplete > 0)
     {
         if(TotalNumberOfTriesLeft > 0)
         {
@@ -192,6 +194,7 @@ int wordComplete = 0;
                 //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
                 
                 doesEnterLetterMatch = false;
+                
                 if(trackIndexId == 0)
                 {
                     myDisplay.text =  letter;   

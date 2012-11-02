@@ -21,51 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/GameViewController.m"
-         timestampString = "373509071.073345"
+         timestampString = "373512581.064576"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "126"
          endingLineNumber = "126"
          landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "373509071.073345"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "186"
-         endingLineNumber = "186"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "373509071.073345"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "373509071.073345"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
-         landmarkName = "-DisplayLabels"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
