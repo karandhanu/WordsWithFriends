@@ -52,9 +52,9 @@ int TotalNumberOfTriesLeft = 0;
 
 BOOL doesEnterLetterMatch = false;
 
-int wordCompleteCount = 0;
+int wordCompleteCounter = 0;
 
-int playAgainCount = 0;
+int playNextWordCounter = 0;
 
 bool isWordComplete = false;
 
@@ -78,6 +78,8 @@ bool isWordComplete = false;
     
     [self CreateTotalNumberOfTriesForWord];
     [self DisplayLabels];
+    wordCompleteCounter = 0;
+    playNextWordCounter = 0;
 	
 }
 
@@ -87,7 +89,7 @@ bool isWordComplete = false;
     // Dispose of any resources that can be recreated.
 }
 
-//this method initailized total number of tries
+//This method initailized total number of tries
 - (void) CreateTotalNumberOfTriesForWord
 {
     TotalNumberOfTriesLeft = [gameWord length]/2;
@@ -202,13 +204,13 @@ bool isWordComplete = false;
 
 -(void) MoveToNextWord
 {
-    if(playAgainCount < ([allWords count] -1))
+    if(playNextWordCounter < ([allWords count] -1))
     {
         [self EnableAllLetters];
         isWordComplete = false;
-        wordCompleteCount = 0;
-        playAgainCount++;
-        gameWord = [allWords objectAtIndex:playAgainCount];
+        wordCompleteCounter = 0;
+        playNextWordCounter++;
+        gameWord = [allWords objectAtIndex:playNextWordCounter];
         
         [self CreateTotalNumberOfTriesForWord];
         [self DisplayLabels];
@@ -250,7 +252,7 @@ bool isWordComplete = false;
         {
             trackIndexId = x;
             doesEnterLetterMatch = true;
-            wordCompleteCount++; 
+            wordCompleteCounter++;
         }
     }
     
@@ -319,7 +321,7 @@ bool isWordComplete = false;
         
     }
     
-    if(wordCompleteCount == [lettersArray count])
+    if(wordCompleteCounter == [lettersArray count])
     {
         isWordComplete = true;
     }
