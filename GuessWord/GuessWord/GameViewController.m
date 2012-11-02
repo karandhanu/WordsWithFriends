@@ -48,15 +48,23 @@ NSMutableString *gameWord;
 
 NSArray *allWords;
 
-int TotalNumberOfTriesLeft = 0;
+//total no of tries a user gets to complete a word.
+int totalNumberOfTriesLeft = 0;
 
+//check if the letter maches again what user entered.
 BOOL doesEnterLetterMatch = false;
 
+//keep trakcs of no. of letters user guessed correctly.
 int wordCompleteCounter = 0;
 
+//keep counter of what word user is playing.
 int playNextWordCounter = 0;
 
+//checks if word is complete or not
 bool isWordComplete = false;
+
+//total number of words user will complete
+int totalWorldComplete = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,10 +82,13 @@ bool isWordComplete = false;
     //initializing
     gameWord = [NSMutableString stringWithFormat:@"pants"];
     
+    //all the words
     allWords = [NSArray arrayWithObjects:@"hello",@"this",@"world",@"etc",nil];
     
-    [self CreateTotalNumberOfTriesForWord];
-    [self DisplayLabels];
+    // initalizing number of tries a user has to complete the word
+    [self createTotalNumberOfTriesForWord];
+    //displays the input label based on word length
+    [self displayLabels];
     wordCompleteCounter = 0;
     playNextWordCounter = 0;
 	
@@ -90,25 +101,25 @@ bool isWordComplete = false;
 }
 
 //This method initailized total number of tries
-- (void) CreateTotalNumberOfTriesForWord
+- (void) createTotalNumberOfTriesForWord
 {
-    TotalNumberOfTriesLeft = [gameWord length]/2;
+    totalNumberOfTriesLeft = [gameWord length]/2+1;
     UILabel *TriesDisplay = self.displayTotalTries;
-    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", TotalNumberOfTriesLeft];
+    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", totalNumberOfTriesLeft];
     TriesDisplay.text = TotalTriesAvailable;
 }
 
 //This method updates the number of tries left to complete a word
--(void) UpdateTotalNumberofTriesForWord
+-(void) updateTotalNumberofTriesForWord
 {
-    TotalNumberOfTriesLeft--;
+    totalNumberOfTriesLeft--;
     UILabel *TriesDisplay = self.displayTotalTries;
-    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", TotalNumberOfTriesLeft];
+    NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", totalNumberOfTriesLeft];
     TriesDisplay.text = TotalTriesAvailable;
     
 }
-
--(void) EnableAllLetters
+//This method enables the keyboard
+-(void) enableAllLetters
 {
     _letter1.enabled =YES;
     _letter2.enabled =YES;
@@ -138,8 +149,8 @@ bool isWordComplete = false;
     _letter26.enabled =YES;
 }
 
-//this displays all the labels
--(void) DisplayLabels
+//This displays all the labels
+-(void) displayLabels
 {
     int wordLength = [gameWord length];
     UILabel *myDisplay = self.display;
@@ -199,25 +210,30 @@ bool isWordComplete = false;
 - (IBAction)playAgain:(id)sender
 {
     
-    [self MoveToNextWord];
+    [self moveToNextWord];
 }
 
--(void) MoveToNextWord
+//This method skips the current word user is on then move to next word
+-(void) moveToNextWord
 {
     if(playNextWordCounter < ([allWords count] -1))
     {
-        [self EnableAllLetters];
+        [self enableAllLetters];
         isWordComplete = false;
         wordCompleteCounter = 0;
         playNextWordCounter++;
         gameWord = [allWords objectAtIndex:playNextWordCounter];
         
-        [self CreateTotalNumberOfTriesForWord];
-        [self DisplayLabels];
+        [self createTotalNumberOfTriesForWord];
+        [self displayLabels];
     }
     
 }
 
+-(void) checkNumberofWordsUserCompleteInLevel
+{
+    
+}
 //1. get the letter pressed
 //2. check if letter pressed exists in the word
 //3. display at the letter in the each label it corrsespondes to
@@ -258,7 +274,7 @@ bool isWordComplete = false;
     
     if(!isWordComplete)
     {
-        if(TotalNumberOfTriesLeft > 0)
+        if(totalNumberOfTriesLeft > 0)
         {
             if(doesEnterLetterMatch)
             {
@@ -301,7 +317,7 @@ bool isWordComplete = false;
             else
             {
                 //reduce the total number tries by 1
-                [self UpdateTotalNumberofTriesForWord];
+                [self updateTotalNumberofTriesForWord];
                 //diabled the button
                 [sender setEnabled:NO];
                 //set the background color
@@ -334,7 +350,7 @@ bool isWordComplete = false;
         [myDisplay4 setHidden:YES];
         [myDisplay5 setHidden:YES];
         [myDisplay6 setHidden:YES];
-        [self MoveToNextWord];
+        [self moveToNextWord];
     }
     
 }
