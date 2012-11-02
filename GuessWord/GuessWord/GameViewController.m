@@ -125,6 +125,11 @@ int wordComplete = 0;
     
     //create a local label
     UILabel *myDisplay = self.display;
+    UILabel *myDisplay2 = self.display2;
+    UILabel *myDisplay3 = self.display3;
+    UILabel *myDisplay4 = self.display4;
+    UILabel *myDisplay5 = self.display5;
+    UILabel *myDisplay6 = self.display6;
     
     //returns what is on the label
     //NSString *currentText= myDisplay.text;
@@ -154,6 +159,8 @@ int wordComplete = 0;
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
+    int trackIndexId;
+    
     for (int x = 0 ; x <= [gameWord length]-1 ; x++) {
         
         NSMutableString *eachLetter = [[NSMutableString alloc]initWithFormat:@"%C",[gameWord characterAtIndex:x]];
@@ -168,12 +175,12 @@ int wordComplete = 0;
         
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
+            trackIndexId = x;
             wordComplete++;
             doesEnterLetterMatch = true;
         }
-        
-        
     }
+    
     if(wordComplete <= [lettersArray count])
     {
         if(TotalNumberOfTriesLeft > 0)
@@ -185,7 +192,34 @@ int wordComplete = 0;
                 //resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
                 
                 doesEnterLetterMatch = false;
-                myDisplay.text =  letter;
+                if(trackIndexId == 0)
+                {
+                    myDisplay.text =  letter;   
+                }
+                
+                if(trackIndexId == 1)
+                {
+                    myDisplay2.text =  letter;
+                }
+                
+                if(trackIndexId == 2)
+                {
+                    myDisplay3.text =  letter;
+                }
+                if(trackIndexId == 3)
+                {
+                    myDisplay4.text =  letter;
+                }
+                
+                if(trackIndexId == 4)
+                {
+                    myDisplay5.text =  letter;
+                }
+                if(trackIndexId == 5)
+                {
+                    myDisplay6.text =  letter;
+                }
+               
                 
                 //disabled the button
                 [sender setEnabled:NO];
