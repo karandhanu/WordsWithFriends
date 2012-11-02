@@ -40,7 +40,7 @@ int wordComplete = 0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //initializing
-    gameWord = [NSMutableString stringWithFormat:@"kran"];
+    gameWord = [NSMutableString stringWithFormat:@"pants"];
     [self CreateTotalNumberOfTriesForWord];
     [self DisplayLabels];
 	
@@ -131,31 +131,7 @@ int wordComplete = 0;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
     
-    //returns what is on the label
-    //NSString *currentText= myDisplay.text;
-    //NSString *newText = [currentText stringByAppendingString:digit];
-    //for (int i = 0; i <= gameWord.length; i++) {
-    
-    //var s = [globalString characterAtIndex:i];
-    //if([globalString characterAtIndex:i == digit.cString])
-    
-    //const unsigned char *newLetter = (const unsigned char *) [letter UTF8String];
-    //skif(testChar == newLetter)
-    
-    //}
-    //unsigned int len = [letter length];
-    //char buffer[len + 1];
-    
-    //strncpy(buffer, [letter UTF8String],len);
-    
-    
-    //char current;
-    //for(int i = 0; i < len; ++i) {
-    //  current = buffer[i];
-    //NSLog(@"my ns string = %c", current);
-    //convert nsmutablestring to nsmutablearray
-    //}
-    
+        
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
@@ -250,11 +226,19 @@ int wordComplete = 0;
             }
         }
         //what to do what to do
+        //means user failed to complete the word
+        //move the next word
         else
         {
             
         }
     }
+    //means user completed the word move to the next word
+    else
+    {
+        
+    }
+    
 }
 
 @end

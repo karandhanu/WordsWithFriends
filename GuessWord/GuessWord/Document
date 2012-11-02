@@ -1,0 +1,24 @@
+//returns what is on the label
+    //NSString *currentText= myDisplay.text;
+    //NSString *newText = [currentText stringByAppendingString:digit];
+    //for (int i = 0; i <= gameWord.length; i++) {
+    
+    //var s = [globalString characterAtIndex:i];
+    //if([globalString characterAtIndex:i == digit.cString])
+    
+    //const unsigned char *newLetter = (const unsigned char *) [letter UTF8String];
+    //skif(testChar == newLetter)
+    
+    //}
+    //unsigned int len = [letter length];
+    //char buffer[len + 1];
+    
+    //strncpy(buffer, [letter UTF8String],len);
+    
+    
+    //char current;
+    //for(int i = 0; i < len; ++i) {
+    //  current = buffer[i];
+    //NSLog(@"my ns string = %c", current);
+    //convert nsmutablestring to nsmutablearray
+    //}
