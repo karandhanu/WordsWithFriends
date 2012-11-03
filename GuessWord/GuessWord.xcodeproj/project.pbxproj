@@ -25,6 +25,8 @@
 		D620764F16320A3500337739 /* GuessWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D620764E16320A3500337739 /* GuessWordTests.m */; };
 		D620765916320B0F00337739 /* Sail-Forward.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D620765816320B0F00337739 /* Sail-Forward.jpg */; };
 		D620765B16320B2C00337739 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D620765A16320B2C00337739 /* icon.png */; };
+		D65EAB7C16449AD90020BF53 /* PauseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */; };
+		D65EAB8016449CB30020BF53 /* PauseMenuProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */; };
 		D6AB3D9A1641F58800CEF025 /* King.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D991641F58800CEF025 /* King.png */; };
 		D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9C1642055100CEF025 /* incorrect.png */; };
 		D6AB3D9F16435BB300CEF025 /* Document in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9E16435BB300CEF025 /* Document */; };
@@ -73,6 +75,10 @@
 		D620764E16320A3500337739 /* GuessWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessWordTests.m; sourceTree = "<group>"; };
 		D620765816320B0F00337739 /* Sail-Forward.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sail-Forward.jpg"; sourceTree = "<group>"; };
 		D620765A16320B2C00337739 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuViewController.h; path = GuessWord/PauseMenuViewController.h; sourceTree = "<group>"; };
+		D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuViewController.m; path = GuessWord/PauseMenuViewController.m; sourceTree = "<group>"; };
+		D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuProtocol.h; path = GuessWord/PauseMenuProtocol.h; sourceTree = "<group>"; };
+		D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuProtocol.m; path = GuessWord/PauseMenuProtocol.m; sourceTree = "<group>"; };
 		D6AB3D991641F58800CEF025 /* King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King.png; sourceTree = "<group>"; };
 		D6AB3D9C1642055100CEF025 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D6AB3D9E16435BB300CEF025 /* Document */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Document; path = GuessWord/Document; sourceTree = "<group>"; };
@@ -115,6 +121,10 @@
 		D620760E16320A3500337739 = {
 			isa = PBXGroup;
 			children = (
+				D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */,
+				D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */,
+				D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */,
+				D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */,
 				D6AB3DB01644867200CEF025 /* Yellow_2_2.png */,
 				D6AB3DAE1644865F00CEF025 /* FunWithWords.jpg */,
 				D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */,
@@ -329,6 +339,8 @@
 				D620763A16320A3500337739 /* ViewController.m in Sources */,
 				D6FDDDC5163F1132008A26EC /* GameViewController.m in Sources */,
 				D6AB3DAD1644809A00CEF025 /* LevelCompleteViewController.m in Sources */,
+				D65EAB7C16449AD90020BF53 /* PauseMenuViewController.m in Sources */,
+				D65EAB8016449CB30020BF53 /* PauseMenuProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

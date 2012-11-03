@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "LevelCompleteViewController.h"
 
 @interface GameViewController ()
 
@@ -218,6 +219,7 @@ int totalWordCompletedCounter = 0;
 //This method skips the current word user is on then move to next word
 -(void) moveToNextWord
 {
+    [self performSegueWithIdentifier:@"identifier_levelComplete" sender:(self)];
     if(playNextWordCounter < ([allWords count] -1))
     {
         [self enableAllLetters];

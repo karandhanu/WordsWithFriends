@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PauseMenuProtocol.h"
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController <PauseMenuProtocol, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (weak, nonatomic) IBOutlet UILabel *displayTotalTries;
 @property (weak, nonatomic) IBOutlet UILabel *display2;
@@ -42,5 +43,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *letter24;
 @property (weak, nonatomic) IBOutlet UIButton *letter25;
 @property (weak, nonatomic) IBOutlet UIButton *letter26;
+
 
 @end
