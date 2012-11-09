@@ -120,6 +120,7 @@
 		D620760E16320A3500337739 = {
 			isa = PBXGroup;
 			children = (
+				D670CFB2164DBDF100EFD4BA /* Resources */,
 				D65EAB871645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png */,
 				D65EAB841644B3490020BF53 /* HighScoreViewController.h */,
 				D65EAB851644B3490020BF53 /* HighScoreViewController.m */,
@@ -210,6 +211,21 @@
 				D620764A16320A3500337739 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D670CFB2164DBDF100EFD4BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D670CFB4164DBE0000EFD4BA /* Data */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D670CFB4164DBE0000EFD4BA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
