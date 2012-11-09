@@ -27,15 +27,14 @@
 		D620765B16320B2C00337739 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D620765A16320B2C00337739 /* icon.png */; };
 		D65EAB7C16449AD90020BF53 /* PauseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */; };
 		D65EAB8016449CB30020BF53 /* PauseMenuProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */; };
+		D65EAB861644B3490020BF53 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EAB851644B3490020BF53 /* HighScoreViewController.m */; };
+		D65EAB881645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = D65EAB871645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png */; };
 		D6AB3D9A1641F58800CEF025 /* King.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D991641F58800CEF025 /* King.png */; };
 		D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9C1642055100CEF025 /* incorrect.png */; };
 		D6AB3D9F16435BB300CEF025 /* Document in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9E16435BB300CEF025 /* Document */; };
-		D6AB3DA41644412B00CEF025 /* 220px-Color_icon_yellow.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */; };
-		D6AB3DA51644412B00CEF025 /* Color_icon_blue.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */; };
 		D6AB3DA61644412B00CEF025 /* Color_icon_green.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */; };
 		D6AB3DA71644412B00CEF025 /* Color_icon_red.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */; };
 		D6AB3DAD1644809A00CEF025 /* LevelCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */; };
-		D6AB3DAF1644865F00CEF025 /* FunWithWords.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DAE1644865F00CEF025 /* FunWithWords.jpg */; };
 		D6AB3DB11644867200CEF025 /* Yellow_2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3DB01644867200CEF025 /* Yellow_2_2.png */; };
 		D6FDDDC5163F1132008A26EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FDDDC4163F1132008A26EC /* GameViewController.m */; };
 /* End PBXBuildFile section */
@@ -79,16 +78,16 @@
 		D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuViewController.m; path = GuessWord/PauseMenuViewController.m; sourceTree = "<group>"; };
 		D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuProtocol.h; path = GuessWord/PauseMenuProtocol.h; sourceTree = "<group>"; };
 		D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuProtocol.m; path = GuessWord/PauseMenuProtocol.m; sourceTree = "<group>"; };
+		D65EAB841644B3490020BF53 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreViewController.h; path = GuessWord/HighScoreViewController.h; sourceTree = "<group>"; };
+		D65EAB851644B3490020BF53 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreViewController.m; path = GuessWord/HighScoreViewController.m; sourceTree = "<group>"; };
+		D65EAB871645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsAppIcon57x57.png; sourceTree = "<group>"; };
 		D6AB3D991641F58800CEF025 /* King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King.png; sourceTree = "<group>"; };
 		D6AB3D9C1642055100CEF025 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D6AB3D9E16435BB300CEF025 /* Document */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Document; path = GuessWord/Document; sourceTree = "<group>"; };
-		D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "220px-Color_icon_yellow.svg.png"; sourceTree = "<group>"; };
-		D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_blue.svg.png; sourceTree = "<group>"; };
 		D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_green.svg.png; sourceTree = "<group>"; };
 		D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_red.svg.png; sourceTree = "<group>"; };
 		D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelCompleteViewController.h; path = GuessWord/LevelCompleteViewController.h; sourceTree = "<group>"; };
 		D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelCompleteViewController.m; path = GuessWord/LevelCompleteViewController.m; sourceTree = "<group>"; };
-		D6AB3DAE1644865F00CEF025 /* FunWithWords.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FunWithWords.jpg; sourceTree = "<group>"; };
 		D6AB3DB01644867200CEF025 /* Yellow_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow_2_2.png; sourceTree = "<group>"; };
 		D6FDDDC3163F1132008A26EC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		D6FDDDC4163F1132008A26EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
@@ -121,16 +120,16 @@
 		D620760E16320A3500337739 = {
 			isa = PBXGroup;
 			children = (
+				D65EAB871645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png */,
+				D65EAB841644B3490020BF53 /* HighScoreViewController.h */,
+				D65EAB851644B3490020BF53 /* HighScoreViewController.m */,
 				D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */,
 				D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */,
 				D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */,
 				D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */,
 				D6AB3DB01644867200CEF025 /* Yellow_2_2.png */,
-				D6AB3DAE1644865F00CEF025 /* FunWithWords.jpg */,
 				D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */,
 				D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */,
-				D6AB3DA01644412B00CEF025 /* 220px-Color_icon_yellow.svg.png */,
-				D6AB3DA11644412B00CEF025 /* Color_icon_blue.svg.png */,
 				D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */,
 				D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */,
 				D6AB3D9E16435BB300CEF025 /* Document */,
@@ -294,12 +293,10 @@
 				D6AB3D9A1641F58800CEF025 /* King.png in Resources */,
 				D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */,
 				D6AB3D9F16435BB300CEF025 /* Document in Resources */,
-				D6AB3DA41644412B00CEF025 /* 220px-Color_icon_yellow.svg.png in Resources */,
-				D6AB3DA51644412B00CEF025 /* Color_icon_blue.svg.png in Resources */,
 				D6AB3DA61644412B00CEF025 /* Color_icon_green.svg.png in Resources */,
 				D6AB3DA71644412B00CEF025 /* Color_icon_red.svg.png in Resources */,
-				D6AB3DAF1644865F00CEF025 /* FunWithWords.jpg in Resources */,
 				D6AB3DB11644867200CEF025 /* Yellow_2_2.png in Resources */,
+				D65EAB881645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +338,7 @@
 				D6AB3DAD1644809A00CEF025 /* LevelCompleteViewController.m in Sources */,
 				D65EAB7C16449AD90020BF53 /* PauseMenuViewController.m in Sources */,
 				D65EAB8016449CB30020BF53 /* PauseMenuProtocol.m in Sources */,
+				D65EAB861644B3490020BF53 /* HighScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

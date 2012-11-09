@@ -22,6 +22,8 @@
     //NSLog(@"my ns string = %c", current);
     //convert nsmutablestring to nsmutablearray
     //}
+    
+    http://synphony.herokuapp.com/api/v1/tok_pisin/words
 http://stackoverflow.com/questions/4421349/iphone-json-iterate-nsarray-and-get-values
 
 this is json itrator
@@ -34,3 +36,7 @@ http://www.sturdybird.com/blog/2012/03/21/how-to-add-a-simple-pause-menu-in-xcod
 
 High score
 http://stackoverflow.com/questions/5813298/local-high-scores-code-for-iphone
+
+//saving user data
+usernames, firstname, lastname
+http://mobile.tutsplus.com/tutorials/iphone/nsuserdefaults_iphone-sdk/
