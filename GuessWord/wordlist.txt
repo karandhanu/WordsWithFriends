@@ -1,0 +1,10 @@
+apple
+pear
+banana
+chicken
+beef
+thursday
+friday
+monday
+hotdog
+hamburger

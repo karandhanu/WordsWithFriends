@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Sail-Forward.jpg" id="RKx-02-M1p">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FunWithWordsBkgrd.png" id="RKx-02-M1p">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mce-rK-nKl">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="6"/>
+            <point key="canvasLocation" x="177" y="-40"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="ylX-oI-l59">
@@ -201,6 +201,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FunWithWordsBasic.png" id="xE7-6r-4Ui">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eCg-KJ-9TC">
                                 <rect key="frame" x="93" y="20" width="134" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -707,7 +711,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfl-Ow-y5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="6"/>
+            <point key="canvasLocation" x="797" y="6"/>
         </scene>
         <!--Level Complete View Controller-->
         <scene sceneID="dcD-sw-2hB">
@@ -744,19 +748,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rc9-Tq-QoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="701"/>
+            <point key="canvasLocation" x="763" y="782"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Sail-Forward.jpg" width="320" height="480"/>
+        <image name="FunWithWordsBasic.png" width="640" height="960"/>
+        <image name="FunWithWordsBkgrd.png" width="640" height="960"/>
         <image name="Yellow_2_2.png" width="51" height="51"/>
     </resources>
+    <classes>
+        <class className="GameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="playAgain:"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter10" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter11" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter12" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter13" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter14" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter15" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter16" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter17" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter18" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter19" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter20" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter21" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter22" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter23" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter24" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter25" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter26" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HighScoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoreViewController.h"/>
+        </class>
+        <class className="LevelCompleteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LevelCompleteViewController.h"/>
+        </class>
+        <class className="PauseMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eyS-o7-Z3O"/>
+        <segue reference="eme-oR-ycn"/>
     </inferredMetricsTieBreakers>
 </document>
