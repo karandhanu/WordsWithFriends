@@ -51,7 +51,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qd0-6Y-gtM" kind="modal" id="qqW-8s-KC7"/>
+                                    <segue destination="qd0-6Y-gtM" kind="modal" identifier="" id="qqW-8s-KC7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SJv-tV-WOx">
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="-40"/>
+            <point key="canvasLocation" x="255" y="-147"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="ylX-oI-l59">
@@ -125,6 +125,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FunWithWordsBasic.png" id="VGX-yO-Hes">
+                                <rect key="frame" x="0.0" y="44" width="327" height="446"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" id="QD8-kj-Wfn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -132,7 +136,7 @@
                                     <navigationItem title="Game Settings" id="g79-MG-HjI">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="FRE-sH-uqt">
                                             <connections>
-                                                <segue destination="2" kind="modal" id="dij-53-j6S"/>
+                                                <action selector="doneEnterCredentials:" destination="qd0-6Y-gtM" id="G7Y-LJ-2rV"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -144,13 +148,13 @@
                                 <color key="textColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.35493896441734185" green="0.68620499320652173" blue="0.44593474551165369" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="OAj-kg-vjD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="OAj-kg-vjD">
                                 <rect key="frame" x="27" y="105" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="Z0d-Tr-EA7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="Z0d-Tr-EA7">
                                 <rect key="frame" x="27" y="162" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -182,11 +186,12 @@
                         <outlet property="autoUpdate" destination="t3g-Hl-diM" id="K8d-Fq-mkv"/>
                         <outlet property="password" destination="Z0d-Tr-EA7" id="jXf-Kt-YQM"/>
                         <outlet property="username" destination="OAj-kg-vjD" id="VHC-GK-Upk"/>
+                        <segue destination="2" kind="modal" identifier="doneCredentials" id="vVy-rs-P76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bND-R7-tad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="44"/>
+            <point key="canvasLocation" x="-214" y="-262"/>
         </scene>
         <!--Pause Menu View Controller-->
         <scene sceneID="kse-uI-fc4">
@@ -804,81 +809,12 @@
         <image name="FunWithWordsBkgrd.png" width="640" height="960"/>
         <image name="Yellow_2_2.png" width="51" height="51"/>
     </resources>
-    <classes>
-        <class className="GameSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="manualUpdate:"/>
-                <relationship kind="outlet" name="autoUpdate" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="playAgain:"/>
-                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="display4" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter10" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter11" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter12" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter13" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter14" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter15" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter16" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter17" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter18" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter19" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter20" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter21" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter22" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter23" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter24" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter25" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter26" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter5" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter6" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="HighScoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoreViewController.h"/>
-        </class>
-        <class className="LevelCompleteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LevelCompleteViewController.h"/>
-        </class>
-        <class className="PauseMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Resume:"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dij-53-j6S"/>
+        <segue reference="vVy-rs-P76"/>
     </inferredMetricsTieBreakers>
 </document>

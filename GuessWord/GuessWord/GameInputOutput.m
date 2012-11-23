@@ -5,6 +5,9 @@
 //  Created by Karan Dhanu on 2012-11-22.
 //  Copyright (c) 2012 TeamB. All rights reserved.
 //
+//this method successfully downloads the JSON data to data.json file
+//http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
+//and contributions from Red panda
 
 #import "GameInputOutput.h"
 
@@ -31,8 +34,6 @@
 
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray
 {
-    //outputWordsArray =[[NSMutableArray alloc]init];
-    //outputSpellingsArray = [[NSMutableArray alloc]init];
     NSError *error;
     NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];

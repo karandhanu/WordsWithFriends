@@ -36,7 +36,7 @@ NSMutableArray *allWordsFromWeb;
     if (isFirstLoad)
     {
         
-        [GameInputOutput getCurrentJSONListFrom:@"http://thehhd.com/CMPT385/accounts/" forUser:@"test_user" remoteFilename:@"wordlist.json"];
+        [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"wordlist.json"];
         isFirstLoad = NO;
     }
 }
@@ -48,8 +48,6 @@ NSMutableArray *allWordsFromWeb;
 }
 
 
-//this method successfully downloads the JSON data to data.json file
-//http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
 
 
 @end

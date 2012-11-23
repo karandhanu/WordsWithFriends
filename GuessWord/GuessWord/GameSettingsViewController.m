@@ -28,6 +28,23 @@
     return self;
 }
 
+- (IBAction)doneEnterCredentials:(id)sender
+{
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    if (![username.text isEqualToString:[userCredentials stringForKey:@"username"]])
+    {
+        [userCredentials setObject:username.text forKey:@"username"];
+        NSLog(@"%@",username.text);
+    }
+    if (![password.text isEqualToString:[userCredentials stringForKey:@"password"]])
+    {
+        [userCredentials setObject:password.text forKey:@"password"];
+    }
+    
+    [self performSegueWithIdentifier:@"doneCredentials" sender:self];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,7 +56,7 @@
 }
 - (IBAction)manualUpdate:(id)sender
 {
-    [GameInputOutput getCurrentTextListFrom:@"http://thehhd.com/CMPT385/accounts/" forUser:@"test_user" remoteFilename:@"/wordlist.txt"];
+    [GameInputOutput getCurrentTextListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"/wordlist.txt"];
 }
 
 - (void)didReceiveMemoryWarning

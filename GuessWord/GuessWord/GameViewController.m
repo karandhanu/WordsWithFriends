@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "LevelCompleteViewController.h"
+#import "GameInputOutput.h"
 
 @interface GameViewController ()
 
@@ -49,6 +50,10 @@ NSMutableString *gameWord;
 
 NSArray *allWords;
 
+NSMutableArray *wordsArray;
+
+NSMutableArray *spellingSequenceArray;
+
 //total no of tries a user gets to complete a word.
 int totalNumberOfTriesLeft = 0;
 
@@ -67,6 +72,21 @@ bool isWordComplete = false;
 //total number of words user will complete
 int totalWordCompletedCounter = 0;
 
+
+//Initializes the arrays of UI objects and inserts the UI Objects
+-(void)initUIArrays
+{
+    wordsArray = [[NSMutableArray alloc] init];
+    spellingSequenceArray = [[NSMutableArray alloc] init];
+}
+
+//this creates the wordlist from the jsonfile that was downloaded when game was set up
+- (void) loadGameData
+{
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
+    [GameInputOutput gameDataFromJSON:filepath outputWordsTo:wordsArray outputSpellingsTo:spellingSequenceArray];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -81,11 +101,17 @@ int totalWordCompletedCounter = 0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initUIArrays];
+    [self loadGameData];
+    NSLog(@"%@",wordsArray);
+    
     //initializing first word
-    gameWord = [NSMutableString stringWithFormat:@"pants"];
+    gameWord = [NSMutableString stringWithFormat:@"hello"];
     
     //all the words
-    allWords = [NSArray arrayWithObjects:@"hello",@"this",@"world",@"etc",nil];
+    //allWords = [NSArray arrayWithObjects:@"hello",@"hello",@"world",@"etc",nil];
+    
+    allWords = wordsArray;
     
     // initalizing number of tries a user has to complete the word
     [self createTotalNumberOfTriesForWord];
@@ -267,6 +293,8 @@ int totalWordCompletedCounter = 0;
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
     
     int trackIndexId;
+    int trackSecondIndexForSameLetter;
+    bool indexAlreadySet = false;
     for (int x = 0 ; x <= [gameWord length]-1 ; x++) {
         
         NSMutableString *eachLetter = [[NSMutableString alloc]initWithFormat:@"%C",[gameWord characterAtIndex:x]];
@@ -279,7 +307,16 @@ int totalWordCompletedCounter = 0;
         
         if([[lettersArray objectAtIndex: x] isEqual:letter.lowercaseString])
         {
-            trackIndexId = x;
+            if(!indexAlreadySet)
+            {
+                trackIndexId = x;
+                indexAlreadySet = true;
+            }
+            
+            if(indexAlreadySet)
+            {
+                trackSecondIndexForSameLetter = x;
+            }
             doesEnterLetterMatch = true;
             wordCompleteCounter++;
         }
@@ -292,8 +329,13 @@ int totalWordCompletedCounter = 0;
             if(doesEnterLetterMatch)
             {
                 doesEnterLetterMatch = false;
+                indexAlreadySet = false;
                 
                 if(trackIndexId == 0)
+                {
+                    myDisplay.text =  letter;   
+                }
+                else if(trackSecondIndexForSameLetter == 0)
                 {
                     myDisplay.text =  letter;   
                 }
@@ -302,12 +344,25 @@ int totalWordCompletedCounter = 0;
                 {
                     myDisplay2.text =  letter;
                 }
+                else if(trackSecondIndexForSameLetter == 1)
+                {
+                    myDisplay2.text =  letter;
+                }
                 
                 if(trackIndexId == 2)
                 {
                     myDisplay3.text =  letter;
                 }
+                else if(trackSecondIndexForSameLetter == 2)
+                {
+                    myDisplay3.text =  letter;
+                }
+                
                 if(trackIndexId == 3)
+                {
+                    myDisplay4.text =  letter;
+                }
+                else if(trackSecondIndexForSameLetter == 3)
                 {
                     myDisplay4.text =  letter;
                 }
@@ -316,7 +371,16 @@ int totalWordCompletedCounter = 0;
                 {
                     myDisplay5.text =  letter;
                 }
+                else if(trackSecondIndexForSameLetter == 4)
+                {
+                    myDisplay5.text =  letter;
+                }
+                
                 if(trackIndexId == 5)
+                {
+                    myDisplay6.text =  letter;
+                }
+                else if(trackSecondIndexForSameLetter == 5)
                 {
                     myDisplay6.text =  letter;
                 }
@@ -368,5 +432,6 @@ int totalWordCompletedCounter = 0;
     }
     
 }
+
 
 @end
