@@ -733,6 +733,13 @@
                                     <segue destination="C8B-Tz-Zi8" kind="modal" id="dOA-kq-cB5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1s-SR-io8">
+                                <rect key="frame" x="30" y="244" width="232" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -743,6 +750,7 @@
                         <outlet property="display4" destination="mpw-XX-BJ5" id="ZMb-Or-tnY"/>
                         <outlet property="display5" destination="kqD-In-1UD" id="c9i-TR-TaO"/>
                         <outlet property="display6" destination="jSR-Uv-J1b" id="vzW-pV-ang"/>
+                        <outlet property="displayCorrectWord" destination="Y1s-SR-io8" id="fmW-hf-1Wi"/>
                         <outlet property="displayTotalTries" destination="GuL-aD-BAg" id="lZ4-PH-BiV"/>
                         <outlet property="letter1" destination="Zmq-8E-C8d" id="nL2-jH-Pek"/>
                         <outlet property="letter10" destination="996-o6-ngQ" id="gqy-0A-ANM"/>
@@ -828,6 +836,8 @@
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doneEnterCredentials:"/>
+                <relationship kind="action" name="manualUpdate:"/>
                 <relationship kind="outlet" name="age" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="autoUpdate" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
@@ -838,12 +848,15 @@
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="playAgain:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display4" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayCorrectWord" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="letter10" candidateClass="UIButton"/>
@@ -881,6 +894,9 @@
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -895,6 +911,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vVy-rs-P76"/>
+        <segue reference="eme-oR-ycn"/>
     </inferredMetricsTieBreakers>
 </document>

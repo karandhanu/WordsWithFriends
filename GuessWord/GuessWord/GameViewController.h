@@ -43,6 +43,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *letter24;
 @property (weak, nonatomic) IBOutlet UIButton *letter25;
 @property (weak, nonatomic) IBOutlet UIButton *letter26;
+@property (weak, nonatomic) IBOutlet UILabel *displayCorrectWord;
 
 
 @end

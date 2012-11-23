@@ -45,6 +45,9 @@
 @synthesize letter24 = _letter24;
 @synthesize letter25 = _letter25;
 @synthesize letter26 = _letter26;
+@synthesize displayCorrectWord;
+
+NSMutableString *correctWord;
 
 NSMutableString *gameWord;
 
@@ -248,6 +251,7 @@ int totalWordCompletedCounter = 0;
    
     if(playNextWordCounter < ([allWords count] -1))
     {
+        displayCorrectWord.text = @"";
         [self enableAllLetters];
         isWordComplete = false;
         wordCompleteCounter = 0;
@@ -324,6 +328,14 @@ int totalWordCompletedCounter = 0;
     
     if(!isWordComplete)
     {
+        //if user has no tries left then display the correct word
+        if(totalNumberOfTriesLeft == 0)
+        {
+            displayCorrectWord.text = gameWord.uppercaseString;
+            displayCorrectWord.enabled = YES;
+            displayCorrectWord.textColor = [UIColor redColor];
+        }
+        
         if(totalNumberOfTriesLeft > 0)
         {
             if(doesEnterLetterMatch)
@@ -404,6 +416,7 @@ int totalWordCompletedCounter = 0;
         //what to do what to do
         //means user failed to complete the word
         //move the next word
+        //show the correct word
         else
         {
             
