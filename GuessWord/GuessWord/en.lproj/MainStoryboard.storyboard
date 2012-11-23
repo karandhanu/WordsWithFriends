@@ -32,7 +32,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8b5-WT-Czi">
                                 <rect key="frame" x="119" y="335" width="110" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal" title="Instructions">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -143,29 +143,29 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Credentials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Prb-ra-RKa">
-                                <rect key="frame" x="27" y="69" width="127" height="21"/>
+                                <rect key="frame" x="32" y="106" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.35493896441734185" green="0.68620499320652173" blue="0.44593474551165369" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="OAj-kg-vjD">
-                                <rect key="frame" x="27" y="105" width="195" height="30"/>
+                                <rect key="frame" x="32" y="141" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="Z0d-Tr-EA7">
-                                <rect key="frame" x="27" y="162" width="195" height="30"/>
+                                <rect key="frame" x="32" y="185" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="t3g-Hl-diM">
-                                <rect key="frame" x="145" y="245" width="79" height="27"/>
+                                <rect key="frame" x="145" y="298" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QX5-ug-C1O">
-                                <rect key="frame" x="59" y="337" width="131" height="44"/>
+                                <rect key="frame" x="91" y="385" width="131" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Manual Update">
@@ -180,17 +180,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" minimumFontSize="17" id="J41-uG-MaO">
-                                <rect key="frame" x="27" y="207" width="49" height="30"/>
+                                <rect key="frame" x="32" y="223" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="F4H-Mt-YBH">
+                                <rect key="frame" x="53" y="69" width="206" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="age" destination="J41-uG-MaO" id="GPI-TD-m5N"/>
                         <outlet property="autoUpdate" destination="t3g-Hl-diM" id="K8d-Fq-mkv"/>
+                        <outlet property="connectedToData" destination="F4H-Mt-YBH" id="1b9-Rr-3QN"/>
                         <outlet property="password" destination="Z0d-Tr-EA7" id="jXf-Kt-YQM"/>
                         <outlet property="username" destination="OAj-kg-vjD" id="VHC-GK-Upk"/>
                         <segue destination="2" kind="modal" identifier="doneCredentials" id="vVy-rs-P76"/>
@@ -820,10 +828,9 @@
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doneEnterCredentials:"/>
-                <relationship kind="action" name="manualUpdate:"/>
                 <relationship kind="outlet" name="age" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="autoUpdate" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="username" candidateClass="UITextField"/>
             </relationships>
@@ -831,8 +838,6 @@
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="playAgain:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
@@ -876,9 +881,6 @@
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Resume:"/>
-            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

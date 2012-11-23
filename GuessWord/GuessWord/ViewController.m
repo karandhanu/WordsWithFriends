@@ -10,7 +10,7 @@
 #import "GameInputOutput.h"
 //#include <SystemConfiguration/SystemConfiguration.h>
 //#include <netinet/in.h>
-//#import "SystemConfiguration/SCNetworkReachability.h"
+#import "SystemConfiguration/SCNetworkReachability.h"
 
 //following lines for importing JSON file
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -26,6 +26,7 @@
 NSString *username;
 NSString *password;
 bool isFirstLoad = YES;
+bool hasDataConnectionAvailable = NO;
 NSMutableArray *firstWordName;
 NSMutableArray *spellingpattern;
 
@@ -36,17 +37,21 @@ NSMutableArray *allWordsFromWeb;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self isDataSourceAvailable];
+    hasDataConnectionAvailable = [GameInputOutput isDataSourceAvailable];
     
-    if (isFirstLoad)
+    //download the new Json wordlist only if we are connected to the internet
+    if(hasDataConnectionAvailable)
     {
-        //get the json file based on the username and password
-        //get the username and password stored in NSuserDefaults
-        username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-        password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-        NSLog(@"%@", username);
-        [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:username remoteFilename:@"wordlist.json"];
-        isFirstLoad = NO;
+        if (isFirstLoad)
+        {
+            //get the json file based on the username and password
+            //get the username and password stored in NSuserDefaults
+            username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+            password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+            NSLog(@"%@", username);
+            [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:username remoteFilename:@"wordlist.json"];
+            isFirstLoad = NO;
+        }
     }
 }
 
@@ -56,25 +61,6 @@ NSMutableArray *allWordsFromWeb;
     //Dispose of any resources that can be recreated.
 }
 
-//this method will check if we are connected to interent or not.
-//http://stackoverflow.com/questions/477852/checking-for-internet-connectivity-in-objective-c
-- (BOOL)isDataSourceAvailable
-{
-    bool _isDataSourceAvailable = NO;
-    static BOOL checkNetwork = YES;
-    if (checkNetwork) { // Since checking the reachability of a host can be expensive, cache the result and perform the reachability check once.
-        checkNetwork = NO;
-        
-        //Boolean success;
-        const char *host_name = "twitter.com"; // your data source host name
-        //SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, host_name);
-        //SCNetworkReachabilityFlags flags;
-        //success = SCNetworkReachabilityGetFlags(reachability, &flags);
-        //_isDataSourceAvailable = success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired);
-        //CFRelease(reachability);
-    }
-    return _isDataSourceAvailable;
-}
 
 
 

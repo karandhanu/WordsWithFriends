@@ -10,6 +10,7 @@
 //and contributions from Red panda
 
 #import "GameInputOutput.h"
+#import "SystemConfiguration/SCNetworkReachability.h"
 
 @implementation GameInputOutput
 
@@ -51,4 +52,26 @@
         [outputSpellingsArray addObject:[spellingPatternDictionary objectForKey:@"spelling_patterns"]];
     }
 }
+
+//this method will check if we are connected to interent or not.
+//http://stackoverflow.com/questions/477852/checking-for-internet-connectivity-in-objective-c
++ (BOOL)isDataSourceAvailable
+{
+    bool _isDataSourceAvailable = NO;
+    BOOL checkNetwork = YES;
+    if (checkNetwork)
+    { // Since checking the reachability of a host can be expensive, cache the result and perform the reachability check once.
+        checkNetwork = NO;
+        
+        Boolean success;
+        const char *host_name = "google.ca"; // your data source host name
+        SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, host_name);
+        SCNetworkReachabilityFlags flags;
+        success = SCNetworkReachabilityGetFlags(reachability, &flags);
+        _isDataSourceAvailable = success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired);
+        CFRelease(reachability);
+    }
+    return _isDataSourceAvailable;
+}
+
 @end

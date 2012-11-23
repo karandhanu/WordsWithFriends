@@ -40,6 +40,8 @@
 		D67D6FE4165EDFCF004CC622 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FE1165EDFCF004CC622 /* Config.xcconfig */; };
 		D67D6FEE165EEC07004CC622 /* GameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */; };
 		D67D6FF2165EF4F6004CC622 /* GameInputOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */; };
+		D67D6FFF165F2269004CC622 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D6FFE165F2269004CC622 /* CoreFoundation.framework */; };
+		D67D7001165F2291004CC622 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D7000165F2290004CC622 /* SystemConfiguration.framework */; };
 		D6AB3D9A1641F58800CEF025 /* King.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D991641F58800CEF025 /* King.png */; };
 		D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9C1642055100CEF025 /* incorrect.png */; };
 		D6AB3D9F16435BB300CEF025 /* Document in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9E16435BB300CEF025 /* Document */; };
@@ -105,6 +107,8 @@
 		D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsViewController.m; sourceTree = "<group>"; };
 		D67D6FF0165EF4F6004CC622 /* GameInputOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInputOutput.h; sourceTree = "<group>"; };
 		D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInputOutput.m; sourceTree = "<group>"; };
+		D67D6FFE165F2269004CC622 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D67D7000165F2290004CC622 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6AB3D991641F58800CEF025 /* King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King.png; sourceTree = "<group>"; };
 		D6AB3D9C1642055100CEF025 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D6AB3D9E16435BB300CEF025 /* Document */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Document; path = GuessWord/Document; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67D7001165F2291004CC622 /* SystemConfiguration.framework in Frameworks */,
+				D67D6FFF165F2269004CC622 /* CoreFoundation.framework in Frameworks */,
 				D620761E16320A3500337739 /* UIKit.framework in Frameworks */,
 				D620762016320A3500337739 /* Foundation.framework in Frameworks */,
 				D620762216320A3500337739 /* CoreGraphics.framework in Frameworks */,
@@ -166,6 +172,8 @@
 		D620761C16320A3500337739 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D67D7000165F2290004CC622 /* SystemConfiguration.framework */,
+				D67D6FFE165F2269004CC622 /* CoreFoundation.framework */,
 				D620761D16320A3500337739 /* UIKit.framework */,
 				D620761F16320A3500337739 /* Foundation.framework */,
 				D620762116320A3500337739 /* CoreGraphics.framework */,

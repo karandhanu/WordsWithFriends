@@ -8,6 +8,7 @@
 
 #import "GameSettingsViewController.h"
 #import "GameInputOutput.h"
+#import "GameViewController.h"
 
 @interface GameSettingsViewController ()
 
@@ -18,7 +19,8 @@
 @synthesize username;
 @synthesize password;
 @synthesize age;
-
+@synthesize connectedToData;
+bool hasDataConnection= NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +60,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    hasDataConnection = [GameInputOutput isDataSourceAvailable];
+    NSString * boolString = hasDataConnection ? @"Connected To Data" : @"No Data Connection";
+    connectedToData.text = boolString;
+    connectedToData.enabled = YES;
+    if(hasDataConnection)
+    {
+        connectedToData.textColor =  [UIColor colorWithRed:0.10f green:0.53f blue:0.03f alpha:1.0f];
+    }
+    else
+    {
+        connectedToData.textColor =  [UIColor redColor];
+    }
     
     //display the username, password and age
     username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
