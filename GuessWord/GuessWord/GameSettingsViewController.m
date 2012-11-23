@@ -17,6 +17,7 @@
 
 @synthesize username;
 @synthesize password;
+@synthesize age;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,6 +42,14 @@
         [userCredentials setObject:password.text forKey:@"password"];
     }
     
+    if (![age.text isEqualToString:[userCredentials stringForKey:@"age"]])
+    {
+        [userCredentials setObject:age.text forKey:@"age"];
+    }
+    
+    //download the new word list based on the username
+    [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:username.text remoteFilename:@"wordlist.json"];
+    
     [self performSegueWithIdentifier:@"doneCredentials" sender:self];
 }
 
@@ -50,9 +59,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // Do any additional setup after loading the view.
+    //display the username, password and age
     username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    age.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"age"];
 }
 - (IBAction)manualUpdate:(id)sender
 {
