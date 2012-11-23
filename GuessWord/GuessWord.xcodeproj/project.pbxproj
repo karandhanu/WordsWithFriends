@@ -38,7 +38,8 @@
 		D67D6FDE165EDE6E004CC622 /* wordlist.json in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FDC165EDE6E004CC622 /* wordlist.json */; };
 		D67D6FDF165EDE6E004CC622 /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FDD165EDE6E004CC622 /* wordlist.txt */; };
 		D67D6FE4165EDFCF004CC622 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FE1165EDFCF004CC622 /* Config.xcconfig */; };
-		D67D6FE5165EDFCF004CC622 /* GameIO.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FE3165EDFCF004CC622 /* GameIO.m */; };
+		D67D6FEE165EEC07004CC622 /* GameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */; };
+		D67D6FF2165EF4F6004CC622 /* GameInputOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */; };
 		D6AB3D9A1641F58800CEF025 /* King.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D991641F58800CEF025 /* King.png */; };
 		D6AB3D9D1642055100CEF025 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9C1642055100CEF025 /* incorrect.png */; };
 		D6AB3D9F16435BB300CEF025 /* Document in Resources */ = {isa = PBXBuildFile; fileRef = D6AB3D9E16435BB300CEF025 /* Document */; };
@@ -84,12 +85,12 @@
 		D620764E16320A3500337739 /* GuessWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessWordTests.m; sourceTree = "<group>"; };
 		D620765816320B0F00337739 /* Sail-Forward.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Sail-Forward.jpg"; path = "GuessWord/Sail-Forward.jpg"; sourceTree = "<group>"; };
 		D620765A16320B2C00337739 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuViewController.h; path = GuessWord/PauseMenuViewController.h; sourceTree = "<group>"; };
-		D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuViewController.m; path = GuessWord/PauseMenuViewController.m; sourceTree = "<group>"; };
-		D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuProtocol.h; path = GuessWord/PauseMenuProtocol.h; sourceTree = "<group>"; };
-		D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuProtocol.m; path = GuessWord/PauseMenuProtocol.m; sourceTree = "<group>"; };
-		D65EAB841644B3490020BF53 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreViewController.h; path = GuessWord/HighScoreViewController.h; sourceTree = "<group>"; };
-		D65EAB851644B3490020BF53 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreViewController.m; path = GuessWord/HighScoreViewController.m; sourceTree = "<group>"; };
+		D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseMenuViewController.h; sourceTree = "<group>"; };
+		D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenuViewController.m; sourceTree = "<group>"; };
+		D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseMenuProtocol.h; sourceTree = "<group>"; };
+		D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenuProtocol.m; sourceTree = "<group>"; };
+		D65EAB841644B3490020BF53 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
+		D65EAB851644B3490020BF53 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
 		D65EAB871645BA2F0020BF53 /* FunWithWordsAppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsAppIcon57x57.png; sourceTree = "<group>"; };
 		D67D6FCB165ED809004CC622 /* FunWithWordsBasic1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsBasic1136.png; sourceTree = "<group>"; };
 		D67D6FCC165ED809004CC622 /* FunWithWordsBasic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsBasic.png; sourceTree = "<group>"; };
@@ -100,15 +101,17 @@
 		D67D6FDC165EDE6E004CC622 /* wordlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wordlist.json; sourceTree = "<group>"; };
 		D67D6FDD165EDE6E004CC622 /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 		D67D6FE1165EDFCF004CC622 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		D67D6FE2165EDFCF004CC622 /* GameIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameIO.h; sourceTree = "<group>"; };
-		D67D6FE3165EDFCF004CC622 /* GameIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameIO.m; sourceTree = "<group>"; };
+		D67D6FEC165EEC06004CC622 /* GameSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsViewController.h; sourceTree = "<group>"; };
+		D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsViewController.m; sourceTree = "<group>"; };
+		D67D6FF0165EF4F6004CC622 /* GameInputOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInputOutput.h; sourceTree = "<group>"; };
+		D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInputOutput.m; sourceTree = "<group>"; };
 		D6AB3D991641F58800CEF025 /* King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King.png; sourceTree = "<group>"; };
 		D6AB3D9C1642055100CEF025 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D6AB3D9E16435BB300CEF025 /* Document */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Document; path = GuessWord/Document; sourceTree = "<group>"; };
 		D6AB3DA21644412B00CEF025 /* Color_icon_green.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_green.svg.png; sourceTree = "<group>"; };
 		D6AB3DA31644412B00CEF025 /* Color_icon_red.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Color_icon_red.svg.png; sourceTree = "<group>"; };
-		D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelCompleteViewController.h; path = GuessWord/LevelCompleteViewController.h; sourceTree = "<group>"; };
-		D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelCompleteViewController.m; path = GuessWord/LevelCompleteViewController.m; sourceTree = "<group>"; };
+		D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCompleteViewController.h; sourceTree = "<group>"; };
+		D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCompleteViewController.m; sourceTree = "<group>"; };
 		D6AB3DB01644867200CEF025 /* Yellow_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow_2_2.png; sourceTree = "<group>"; };
 		D6FDDDC3163F1132008A26EC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		D6FDDDC4163F1132008A26EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
@@ -141,21 +144,13 @@
 		D620760E16320A3500337739 = {
 			isa = PBXGroup;
 			children = (
-				D670CFB7165ED74900EFD4BA /* Pictures */,
-				D670CFB2164DBDF100EFD4BA /* Resources */,
-				D65EAB841644B3490020BF53 /* HighScoreViewController.h */,
-				D65EAB851644B3490020BF53 /* HighScoreViewController.m */,
-				D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */,
-				D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */,
-				D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */,
-				D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */,
-				D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */,
-				D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */,
 				D6AB3D9E16435BB300CEF025 /* Document */,
+				D620761C16320A3500337739 /* Frameworks */,
 				D620762316320A3500337739 /* GuessWord */,
 				D620764716320A3500337739 /* GuessWordTests */,
-				D620761C16320A3500337739 /* Frameworks */,
+				D670CFB7165ED74900EFD4BA /* Pictures */,
 				D620761A16320A3500337739 /* Products */,
+				D670CFB2164DBDF100EFD4BA /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,15 +177,12 @@
 		D620762316320A3500337739 /* GuessWord */ = {
 			isa = PBXGroup;
 			children = (
-				D67D6FE0165EDF98004CC622 /* Support */,
 				D620762C16320A3500337739 /* AppDelegate.h */,
 				D620762D16320A3500337739 /* AppDelegate.m */,
 				D620763516320A3500337739 /* MainStoryboard.storyboard */,
-				D620763816320A3500337739 /* ViewController.h */,
-				D620763916320A3500337739 /* ViewController.m */,
+				D67D6FEB165EE793004CC622 /* Controllers */,
+				D67D6FE0165EDF98004CC622 /* Support */,
 				D620762416320A3500337739 /* Supporting Files */,
-				D6FDDDC3163F1132008A26EC /* GameViewController.h */,
-				D6FDDDC4163F1132008A26EC /* GameViewController.m */,
 			);
 			path = GuessWord;
 			sourceTree = "<group>";
@@ -270,10 +262,31 @@
 			isa = PBXGroup;
 			children = (
 				D67D6FE1165EDFCF004CC622 /* Config.xcconfig */,
-				D67D6FE2165EDFCF004CC622 /* GameIO.h */,
-				D67D6FE3165EDFCF004CC622 /* GameIO.m */,
+				D67D6FF0165EF4F6004CC622 /* GameInputOutput.h */,
+				D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		D67D6FEB165EE793004CC622 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D620763916320A3500337739 /* ViewController.m */,
+				D620763816320A3500337739 /* ViewController.h */,
+				D6FDDDC4163F1132008A26EC /* GameViewController.m */,
+				D6FDDDC3163F1132008A26EC /* GameViewController.h */,
+				D6AB3DAB1644809A00CEF025 /* LevelCompleteViewController.h */,
+				D6AB3DAC1644809A00CEF025 /* LevelCompleteViewController.m */,
+				D65EAB7B16449AD90020BF53 /* PauseMenuViewController.m */,
+				D65EAB851644B3490020BF53 /* HighScoreViewController.m */,
+				D65EAB841644B3490020BF53 /* HighScoreViewController.h */,
+				D65EAB7F16449CB30020BF53 /* PauseMenuProtocol.m */,
+				D65EAB7E16449CB30020BF53 /* PauseMenuProtocol.h */,
+				D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */,
+				D67D6FEC165EEC06004CC622 /* GameSettingsViewController.h */,
+				D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +425,8 @@
 				D65EAB7C16449AD90020BF53 /* PauseMenuViewController.m in Sources */,
 				D65EAB8016449CB30020BF53 /* PauseMenuProtocol.m in Sources */,
 				D65EAB861644B3490020BF53 /* HighScoreViewController.m in Sources */,
+				D67D6FEE165EEC07004CC622 /* GameSettingsViewController.m in Sources */,
+				D67D6FF2165EF4F6004CC622 /* GameInputOutput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +435,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D620764F16320A3500337739 /* GuessWordTests.m in Sources */,
-				D67D6FE5165EDFCF004CC622 /* GameIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

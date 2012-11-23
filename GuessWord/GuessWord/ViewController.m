@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "GameIO.h"
+#import "GameInputOutput.h"
+
+//following lines for importing JSON file
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+#define LatestsynPhonywordsURL [NSURL URLWithString: @"http://synphony.herokuapp.com/api/simplified/simple_english/words?focus=b&known=b,a,t,r,s"] 
 
 @interface ViewController ()
 
@@ -32,7 +36,7 @@ NSMutableArray *allWordsFromWeb;
     if (isFirstLoad)
     {
         
-        //[GameIO getCurrentJSONListFrom:@"http://thehhd.com/CMPT385/accounts/" forUser:@"test_user" remoteFilename:@"wordlist.json"];
+        [GameInputOutput getCurrentJSONListFrom:@"http://thehhd.com/CMPT385/accounts/" forUser:@"test_user" remoteFilename:@"wordlist.json"];
         isFirstLoad = NO;
     }
 }

@@ -1,17 +1,14 @@
 //
-//  GameIO.m
+//  GameInputOutput.m
 //  GuessWord
 //
-//  Created by Karan Dhanu on 2012-11-02.
+//  Created by Karan Dhanu on 2012-11-22.
 //  Copyright (c) 2012 TeamB. All rights reserved.
 //
-//  Code Standard:
-//  http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html
-//
 
-#import "GameIO.h"
+#import "GameInputOutput.h"
 
-@implementation GameIO
+@implementation GameInputOutput
 
 + (void) getCurrentTextListFrom:(NSString *)baseURL forUser:(NSString *)username remoteFilename:(NSString *)filename
 {
