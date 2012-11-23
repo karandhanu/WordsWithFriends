@@ -324,17 +324,12 @@ int totalWordCompletedCounter = 0;
             doesEnterLetterMatch = true;
             wordCompleteCounter++;
         }
+        
     }
     
     if(!isWordComplete)
     {
-        //if user has no tries left then display the correct word
-        if(totalNumberOfTriesLeft == 0)
-        {
-            displayCorrectWord.text = gameWord.uppercaseString;
-            displayCorrectWord.enabled = YES;
-            displayCorrectWord.textColor = [UIColor redColor];
-        }
+        
         
         if(totalNumberOfTriesLeft > 0)
         {
@@ -410,13 +405,20 @@ int totalWordCompletedCounter = 0;
                 //diabled the button
                 [sender setEnabled:NO];
                 //set the background color
-                [sender setBackgroundColor:[UIColor redColor]];                
+                [sender setBackgroundColor:[UIColor redColor]];
+                //if user has no tries left then display the correct word
+                if(totalNumberOfTriesLeft == 0)
+                {
+                    displayCorrectWord.text = gameWord.uppercaseString;
+                    displayCorrectWord.enabled = YES;
+                    displayCorrectWord.hidden = NO;
+                    displayCorrectWord.textColor = [UIColor redColor];
+                }
             }
         }
         //what to do what to do
         //means user failed to complete the word
-        //move the next word
-        //show the correct word
+        //move the next words
         else
         {
             

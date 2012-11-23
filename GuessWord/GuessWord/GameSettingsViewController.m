@@ -18,7 +18,6 @@
 
 @synthesize username;
 @synthesize password;
-@synthesize age;
 @synthesize connectedToData;
 bool hasDataConnection= NO;
 
@@ -42,11 +41,6 @@ bool hasDataConnection= NO;
     if (![password.text isEqualToString:[userCredentials stringForKey:@"password"]])
     {
         [userCredentials setObject:password.text forKey:@"password"];
-    }
-    
-    if (![age.text isEqualToString:[userCredentials stringForKey:@"age"]])
-    {
-        [userCredentials setObject:age.text forKey:@"age"];
     }
     
     //download the new word list based on the username
@@ -76,8 +70,7 @@ bool hasDataConnection= NO;
     //display the username, password and age
     username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-    age.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"age"];
-}
+    }
 - (IBAction)manualUpdate:(id)sender
 {
     [GameInputOutput getCurrentTextListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"/wordlist.txt"];

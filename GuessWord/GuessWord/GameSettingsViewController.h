@@ -12,8 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UISwitch *autoUpdate;
-@property (weak, nonatomic) IBOutlet UITextField *age;
 @property (weak, nonatomic) IBOutlet UILabel *connectedToData;
 
 @end
