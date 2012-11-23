@@ -132,7 +132,7 @@ int totalWordCompletedCounter = 0;
 //This method initailized total number of tries
 - (void) createTotalNumberOfTriesForWord
 {
-    totalNumberOfTriesLeft = [gameWord length]/2+1;
+    totalNumberOfTriesLeft = [gameWord length]+1;
     UILabel *TriesDisplay = self.displayTotalTries;
     NSString *TotalTriesAvailable = [NSString stringWithFormat:@"%d", totalNumberOfTriesLeft];
     TriesDisplay.text = TotalTriesAvailable;
