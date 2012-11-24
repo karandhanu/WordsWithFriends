@@ -46,6 +46,7 @@
 @synthesize letter25 = _letter25;
 @synthesize letter26 = _letter26;
 @synthesize displayCorrectWord;
+@synthesize screenUsername;
 
 NSMutableString *correctWord;
 
@@ -103,6 +104,7 @@ int totalWordCompletedCounter = 0;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    screenUsername.title = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"].uppercaseString;
     
     [self initUIArrays];
     [self loadGameData];

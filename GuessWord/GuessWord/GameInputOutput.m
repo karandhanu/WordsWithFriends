@@ -7,7 +7,6 @@
 //
 //this method successfully downloads the JSON data to data.json file
 //http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
-//and contributions from Red panda
 
 #import "GameInputOutput.h"
 #import "SystemConfiguration/SCNetworkReachability.h"
@@ -16,23 +15,33 @@
 
 + (void) getCurrentTextListFrom:(NSString *)baseURL forUser:(NSString *)username remoteFilename:(NSString *)filename
 {
-    //Set file path to write file to
+    //path to the file to down
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
-    // Download and write to file
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@", baseURL, username, filename]];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     [urlData writeToFile:filePath atomically:YES];
 }
 
-+ (void) getCurrentJSONListFrom:(NSString *)baseURL forUser:(NSString *)username remoteFilename:(NSString *)filename
+///This method will download the file from JSON source url
++ (void) writeJsonToFile:(NSString *)baseURL forUser:(NSString *)username forpassword:(NSString *)password remoteFilename:(NSString *)filename
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@", baseURL, username, filename]];
+    //no password for now
+    password = @"";
+    NSString *pass = password;
+     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
+    //construct the url to down the json file from somethings like www.synmphy.com/kam/wordlist.JSON=?xkdkofofofososos
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@%@", baseURL, username, filename,password]];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
-    [urlData writeToFile:filePath atomically:YES];
+    //attempt to download live data
+    if (urlData)
+    {
+        [urlData writeToFile:filePath atomically:YES];
+    }
 }
 
+
+///this method is taken from Team Red Panda
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray
 {
     NSError *error;

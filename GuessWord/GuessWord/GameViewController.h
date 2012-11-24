@@ -44,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *letter25;
 @property (weak, nonatomic) IBOutlet UIButton *letter26;
 @property (weak, nonatomic) IBOutlet UILabel *displayCorrectWord;
+@property (weak, nonatomic) IBOutlet UINavigationItem *screenUsername;
 
 
 @end

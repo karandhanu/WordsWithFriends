@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UILabel *connectedToData;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberMeToggle;
+@property (weak, nonatomic) IBOutlet UILabel *errorMessage;
 
 @end

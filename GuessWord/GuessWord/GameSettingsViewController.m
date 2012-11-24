@@ -19,6 +19,9 @@
 @synthesize username;
 @synthesize password;
 @synthesize connectedToData;
+@synthesize rememberMeToggle;
+@synthesize errorMessage;
+
 bool hasDataConnection= NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,21 +35,19 @@ bool hasDataConnection= NO;
 
 - (IBAction)doneEnterCredentials:(id)sender
 {
-    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-    if (![username.text isEqualToString:[userCredentials stringForKey:@"username"]])
+    //1.download the file when user has done entering username and password
+    //2. download the file from sever only if username and password is not bank
+    //3. I need to find a to authenicate these usernames and passwords
+    if(![username.text isEqualToString:@""])
     {
-        [userCredentials setObject:username.text forKey:@"username"];
-        NSLog(@"%@",username.text);
+        //get the json file based on the username and password
+        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUser:username.text forpassword:password.text remoteFilename:@"wordlist.json"];
+        
     }
-    if (![password.text isEqualToString:[userCredentials stringForKey:@"password"]])
+    if([self saveUserCredentials])
     {
-        [userCredentials setObject:password.text forKey:@"password"];
+        [self performSegueWithIdentifier:@"doneCredentials" sender:self];
     }
-    
-    //download the new word list based on the username
-    [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:username.text remoteFilename:@"wordlist.json"];
-    
-    [self performSegueWithIdentifier:@"doneCredentials" sender:self];
 }
 
 
@@ -54,6 +55,38 @@ bool hasDataConnection= NO;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self displayInternetConnectionStatus];
+    
+    //display the username, password
+    username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+
+}
+
+- (IBAction)manualUpdate:(id)sender
+{
+    [GameInputOutput getCurrentTextListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"/wordlist.txt"];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (IBAction)rememberCredentials:(id)sender
+{
+    if(rememberMeToggle.isOn)
+    {
+        
+    }
+    if(!rememberMeToggle.isOn)
+    {
+        
+    }
+}
+
+- (void) displayInternetConnectionStatus
+{
     hasDataConnection = [GameInputOutput isDataSourceAvailable];
     NSString * boolString = hasDataConnection ? @"Connected To Data" : @"No Data Connection";
     connectedToData.text = boolString;
@@ -66,20 +99,53 @@ bool hasDataConnection= NO;
     {
         connectedToData.textColor =  [UIColor redColor];
     }
-    
-    //display the username, password and age
-    username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-    }
-- (IBAction)manualUpdate:(id)sender
-{
-    [GameInputOutput getCurrentTextListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"/wordlist.txt"];
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL) saveUserCredentials
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    bool saveCredentails = false;
+    //only save credentials if user has remember me button to on
+    if(rememberMeToggle.isOn)
+    {
+        
+        if ((![username.text isEqualToString:@""] && ![username.text isEqualToString:@"username"]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]))
+        {
+            [userCredentials setObject:username.text forKey:@"username"];
+            [userCredentials setObject:password.text forKey:@"password"];
+            return true;
+        }
+        else if ([username.text isEqualToString:@""] &&[password.text isEqualToString:@""])
+        {
+            username.text = @"";
+            password.text = @"";
+            [userCredentials setObject:username.text forKey:@"username"];
+            [userCredentials setObject:password.text forKey:@"password"];
+            return true;
+        }
+        else if([username.text isEqualToString:@""] ||[password.text isEqualToString:@""])
+        {
+            username.text = @"";
+            password.text = @"";
+
+            [userCredentials setObject:username.text forKey:@"username"];
+            [userCredentials setObject:password.text forKey:@"password"];
+            errorMessage.text = @"Invalid username or password";
+            errorMessage.hidden = NO;
+            return false;
+        }
+        
+    }
+    //do not save credentials
+    else
+    {
+        username.text = @"";
+        password.text = @"";
+        [userCredentials setObject:username.text forKey:@"username"];
+        [userCredentials setObject:password.text forKey:@"password"];
+        return true;
+    }
+    return saveCredentails;
 }
 
 @end

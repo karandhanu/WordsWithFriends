@@ -48,9 +48,14 @@ NSMutableArray *allWordsFromWeb;
             //get the username and password stored in NSuserDefaults
             username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
             password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-            NSLog(@"%@", username);
-            [GameInputOutput getCurrentJSONListFrom:@"http://chrishobbs.ca/groupb" forUser:username remoteFilename:@"wordlist.json"];
-            isFirstLoad = NO;
+            
+            //download the file if username is not empty
+            if(![username isEqualToString:@""])
+            {
+                //get the json file based on the username and password
+                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUser:username forpassword:password remoteFilename:@"wordlist.json"];
+                isFirstLoad = NO;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60DBE13166026230009E49E /* DevelopersInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60DBE12166026230009E49E /* DevelopersInfoViewController.m */; };
 		D620761E16320A3500337739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D620761D16320A3500337739 /* UIKit.framework */; };
 		D620762016320A3500337739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D620761F16320A3500337739 /* Foundation.framework */; };
 		D620762216320A3500337739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D620762116320A3500337739 /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60DBE11166026230009E49E /* DevelopersInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevelopersInfoViewController.h; sourceTree = "<group>"; };
+		D60DBE12166026230009E49E /* DevelopersInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevelopersInfoViewController.m; sourceTree = "<group>"; };
 		D620761916320A3500337739 /* GuessWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D620761D16320A3500337739 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D620761F16320A3500337739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -293,6 +296,8 @@
 				D65EAB7A16449AD90020BF53 /* PauseMenuViewController.h */,
 				D67D6FEC165EEC06004CC622 /* GameSettingsViewController.h */,
 				D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */,
+				D60DBE11166026230009E49E /* DevelopersInfoViewController.h */,
+				D60DBE12166026230009E49E /* DevelopersInfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				D65EAB861644B3490020BF53 /* HighScoreViewController.m in Sources */,
 				D67D6FEE165EEC07004CC622 /* GameSettingsViewController.m in Sources */,
 				D67D6FF2165EF4F6004CC622 /* GameInputOutput.m in Sources */,
+				D60DBE13166026230009E49E /* DevelopersInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

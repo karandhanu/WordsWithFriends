@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="249" y="-436"/>
         </scene>
-        <!--View Controller-->
+        <!--Developers Info View Controller-->
         <scene sceneID="xiX-Pu-TYK">
             <objects>
-                <viewController id="TYq-JQ-zh2" sceneMemberID="viewController">
+                <viewController id="TYq-JQ-zh2" customClass="DevelopersInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2KD-mj-uF4">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -132,6 +132,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="PressedKaran:" destination="TYq-JQ-zh2" eventType="touchUpInside" id="hrJ-Yz-WHg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22Q-8k-6qr">
                                 <rect key="frame" x="0.0" y="204" width="320" height="44"/>
@@ -172,6 +175,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="PressedKaranDhanu" destination="6Oc-c4-Dan" id="NA8-ql-uQn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUi-kL-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkl-Mg-NzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="882"/>
+            <point key="canvasLocation" x="194" y="785"/>
         </scene>
         <!--Game Settings View Controller-->
         <scene sceneID="pc7-p4-O8I">
@@ -243,28 +249,49 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Credentials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Prb-ra-RKa">
-                                <rect key="frame" x="57" y="107" width="127" height="21"/>
+                                <rect key="frame" x="57" y="82" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.19333681259999999" green="0.12874208540000001" blue="0.68620499319999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.35493896441734185" green="0.68620499320652173" blue="0.44593474551165369" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="OAj-kg-vjD">
-                                <rect key="frame" x="57" y="142" width="195" height="30"/>
+                                <rect key="frame" x="57" y="111" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="Z0d-Tr-EA7">
-                                <rect key="frame" x="57" y="186" width="195" height="30"/>
+                                <rect key="frame" x="57" y="149" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="F4H-Mt-YBH">
-                                <rect key="frame" x="57" y="70" width="206" height="21"/>
+                                <rect key="frame" x="57" y="53" width="206" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="z76-vg-xfW">
+                                <rect key="frame" x="175" y="187" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="rememberCredentials:" destination="qd0-6Y-gtM" eventType="valueChanged" id="s9k-9j-7zQ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remember me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pxw-GV-KFo">
+                                <rect key="frame" x="57" y="187" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Zc-J5-rG2">
+                                <rect key="frame" x="57" y="216" width="246" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -272,7 +299,9 @@
                     </view>
                     <connections>
                         <outlet property="connectedToData" destination="F4H-Mt-YBH" id="1b9-Rr-3QN"/>
+                        <outlet property="errorMessage" destination="4Zc-J5-rG2" id="FF9-5k-7Qq"/>
                         <outlet property="password" destination="Z0d-Tr-EA7" id="jXf-Kt-YQM"/>
+                        <outlet property="rememberMeToggle" destination="z76-vg-xfW" id="nIg-Ue-j4q"/>
                         <outlet property="username" destination="OAj-kg-vjD" id="VHC-GK-Upk"/>
                         <segue destination="2" kind="modal" identifier="doneCredentials" id="vVy-rs-P76"/>
                     </connections>
@@ -328,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xt-pK-b5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-190" y="587"/>
+            <point key="canvasLocation" x="-124" y="324"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="1Sp-kN-vPQ">
@@ -342,20 +371,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eCg-KJ-9TC">
-                                <rect key="frame" x="93" y="20" width="134" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Main Menu">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2" kind="modal" id="eme-oR-ycn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZxX-Kd-nKo">
                                 <rect key="frame" x="67" y="311" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -777,7 +792,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Xw-Bf-eoj">
-                                <rect key="frame" x="93" y="110" width="134" height="29"/>
+                                <rect key="frame" x="93" y="108" width="134" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Next Word">
@@ -792,7 +807,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vzK-P7-2zk">
-                                <rect key="frame" x="93" y="64" width="134" height="29"/>
+                                <rect key="frame" x="93" y="63" width="134" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Pause">
@@ -813,6 +828,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" id="h12-H6-a9E">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="CP3-8K-DrL">
+                                        <barButtonItem key="leftBarButtonItem" title="Main Menu" id="38P-Ec-5LR">
+                                            <connections>
+                                                <segue destination="2" kind="modal" id="409-MH-OuK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -851,6 +879,7 @@
                         <outlet property="letter7" destination="ajJ-W6-JdN" id="05A-zb-EMS"/>
                         <outlet property="letter8" destination="HKv-Ou-Oif" id="TCk-0h-Cn3"/>
                         <outlet property="letter9" destination="k1D-Ue-j9j" id="i9Y-OP-ofG"/>
+                        <outlet property="screenUsername" destination="CP3-8K-DrL" id="kmn-jf-8Fo"/>
                         <segue destination="zl9-WT-bRd" kind="modal" identifier="identifier_levelComplete" id="sHt-HO-V5e"/>
                     </connections>
                 </viewController>
@@ -897,7 +926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rc9-Tq-QoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="782"/>
+            <point key="canvasLocation" x="687" y="785"/>
         </scene>
     </scenes>
     <resources>
@@ -906,11 +935,23 @@
         <image name="Yellow_2_2.png" width="51" height="51"/>
     </resources>
     <classes>
+        <class className="DevelopersInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DevelopersInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="PressedKaran:"/>
+                <relationship kind="outlet" name="PressedKaranDhanu" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doneEnterCredentials:"/>
+                <relationship kind="action" name="manualUpdate:"/>
+                <relationship kind="action" name="rememberCredentials:"/>
                 <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="errorMessage" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rememberMeToggle" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="username" candidateClass="UITextField"/>
             </relationships>
         </class>
@@ -953,6 +994,7 @@
                 <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="screenUsername" candidateClass="UINavigationItem"/>
             </relationships>
         </class>
         <class className="HighScoreViewController" superclassName="UIViewController">
@@ -963,6 +1005,9 @@
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -977,6 +1022,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eme-oR-ycn"/>
+        <segue reference="vVy-rs-P76"/>
     </inferredMetricsTieBreakers>
 </document>
