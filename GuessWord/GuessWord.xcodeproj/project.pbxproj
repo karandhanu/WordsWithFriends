@@ -37,7 +37,6 @@
 		D67D6FD5165ED809004CC622 /* FunWithWordsIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FCF165ED809004CC622 /* FunWithWordsIcon57.png */; };
 		D67D6FD6165ED809004CC622 /* FunWithWordsIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FD0165ED809004CC622 /* FunWithWordsIcon114.png */; };
 		D67D6FDE165EDE6E004CC622 /* wordlist.json in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FDC165EDE6E004CC622 /* wordlist.json */; };
-		D67D6FDF165EDE6E004CC622 /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FDD165EDE6E004CC622 /* wordlist.txt */; };
 		D67D6FE4165EDFCF004CC622 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D67D6FE1165EDFCF004CC622 /* Config.xcconfig */; };
 		D67D6FEE165EEC07004CC622 /* GameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */; };
 		D67D6FF2165EF4F6004CC622 /* GameInputOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */; };
@@ -104,7 +103,6 @@
 		D67D6FCF165ED809004CC622 /* FunWithWordsIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsIcon57.png; sourceTree = "<group>"; };
 		D67D6FD0165ED809004CC622 /* FunWithWordsIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunWithWordsIcon114.png; sourceTree = "<group>"; };
 		D67D6FDC165EDE6E004CC622 /* wordlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wordlist.json; sourceTree = "<group>"; };
-		D67D6FDD165EDE6E004CC622 /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 		D67D6FE1165EDFCF004CC622 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D67D6FEC165EEC06004CC622 /* GameSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsViewController.h; sourceTree = "<group>"; };
 		D67D6FED165EEC06004CC622 /* GameSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsViewController.m; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				D67D6FDC165EDE6E004CC622 /* wordlist.json */,
-				D67D6FDD165EDE6E004CC622 /* wordlist.txt */,
 			);
 			name = DataFile;
 			sourceTree = "<group>";
@@ -394,7 +391,6 @@
 				D67D6FD5165ED809004CC622 /* FunWithWordsIcon57.png in Resources */,
 				D67D6FD6165ED809004CC622 /* FunWithWordsIcon114.png in Resources */,
 				D67D6FDE165EDE6E004CC622 /* wordlist.json in Resources */,
-				D67D6FDF165EDE6E004CC622 /* wordlist.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
