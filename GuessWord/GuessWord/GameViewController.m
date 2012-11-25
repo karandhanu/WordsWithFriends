@@ -47,6 +47,7 @@
 @synthesize letter26 = _letter26;
 @synthesize displayCorrectWord;
 @synthesize screenUsername;
+@synthesize scoreCount;
 
 NSMutableString *correctWord;
 
@@ -75,6 +76,9 @@ bool isWordComplete = false;
 
 //total number of words user will complete
 int totalWordCompletedCounter = 0;
+
+//base score to be awarded
+int gameScore = 50;
 
 
 //Initializes the arrays of UI objects and inserts the UI Objects
@@ -276,10 +280,20 @@ int totalWordCompletedCounter = 0;
     if(completeWord)
     {
         totalWordCompletedCounter++;
+        gameScore = totalWordCompletedCounter * gameScore;
+        NSString *score = [NSString stringWithFormat:@"%d", gameScore];
+        scoreCount.text = score;
         NSLog(@"number of words complete %d", totalWordCompletedCounter);
     }
     
 }
+
+- (IBAction)backToMainMenu:(id)sender
+{
+    NSLog(@"%d",totalWordCompletedCounter);
+    [self performSegueWithIdentifier:@"mainMenuIdentifier" sender:self];
+}
+
 //1. get the letter pressed
 //2. check if letter pressed exists in the word
 //3. display at the letter in the each label it corrsespondes to
@@ -332,8 +346,6 @@ int totalWordCompletedCounter = 0;
     
     if(!isWordComplete)
     {
-        
-        
         if(totalNumberOfTriesLeft > 0)
         {
             if(doesEnterLetterMatch)

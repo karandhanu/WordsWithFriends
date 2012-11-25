@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *highScore8;
 @property (weak, nonatomic) IBOutlet UILabel *highScore9;
 @property (weak, nonatomic) IBOutlet UILabel *highScore10;
-
++(void)saveScore: (NSString *)score;
++(void)calculateHighScore:(int)totalWordsCompleted;
 
 @end

@@ -52,7 +52,7 @@ int highScore = 0;
    
 	// Do any additional setup after loading the view.
     
-    //[self saveScore:@"100"];
+    //[HighScoreViewController saveScore:@"100"];
     [self displayScores];
 }
 
@@ -62,13 +62,13 @@ int highScore = 0;
     // Dispose of any resources that can be recreated.
 }
 
--(void)calculateHighScore:(int)totalWordsCompleted
++(void)calculateHighScore:(int)totalWordsCompleted
 {
-    [self saveScore:@"10"];
+    [HighScoreViewController saveScore:@"10"];
 }
 
 //(NSString *)baseURL
--(void)saveScore: (NSString *)score
++(void)saveScore: (NSString *)score
 {
     int counter = 1;
 
@@ -87,7 +87,10 @@ int highScore = 0;
     {
         counter = 1;
     }
-    
+    else if([retrievedCounter isEqualToString:@"10"])
+    {
+        counter = 1;
+    }
     else
     {
         counter = [retrievedCounter intValue];

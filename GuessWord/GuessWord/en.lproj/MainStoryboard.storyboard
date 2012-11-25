@@ -526,6 +526,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" id="h12-H6-a9E">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="CP3-8K-DrL">
+                                        <barButtonItem key="leftBarButtonItem" title="Main Menu" id="38P-Ec-5LR">
+                                            <connections>
+                                                <action selector="backToMainMenu:" destination="15q-aP-Qdc" id="Hzd-MT-Xci"/>
+                                                <segue destination="2" kind="modal" identifier="mainMenuIdentifier" id="2Jj-0F-wzo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZxX-Kd-nKo">
                                 <rect key="frame" x="67" y="311" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -947,7 +961,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Xw-Bf-eoj">
-                                <rect key="frame" x="93" y="108" width="134" height="29"/>
+                                <rect key="frame" x="93" y="137" width="134" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Next Word">
@@ -962,7 +976,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vzK-P7-2zk">
-                                <rect key="frame" x="93" y="63" width="134" height="29"/>
+                                <rect key="frame" x="93" y="92" width="134" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Pause">
@@ -983,19 +997,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" id="h12-H6-a9E">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="CP3-8K-DrL">
-                                        <barButtonItem key="leftBarButtonItem" title="Main Menu" id="38P-Ec-5LR">
-                                            <connections>
-                                                <segue destination="2" kind="modal" id="409-MH-OuK"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ATi-F1-Ng2">
+                                <rect key="frame" x="196" y="53" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1vn-yH-4lu">
+                                <rect key="frame" x="258" y="53" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1034,6 +1049,7 @@
                         <outlet property="letter7" destination="ajJ-W6-JdN" id="05A-zb-EMS"/>
                         <outlet property="letter8" destination="HKv-Ou-Oif" id="TCk-0h-Cn3"/>
                         <outlet property="letter9" destination="k1D-Ue-j9j" id="i9Y-OP-ofG"/>
+                        <outlet property="scoreCount" destination="1vn-yH-4lu" id="tdl-kL-FM1"/>
                         <outlet property="screenUsername" destination="CP3-8K-DrL" id="kmn-jf-8Fo"/>
                         <segue destination="zl9-WT-bRd" kind="modal" identifier="identifier_levelComplete" id="sHt-HO-V5e"/>
                     </connections>
@@ -1100,6 +1116,8 @@
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doneEnterCredentials:"/>
+                <relationship kind="action" name="rememberCredentials:"/>
                 <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="errorMessage" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -1110,6 +1128,9 @@
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backToMainMenu:"/>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="playAgain:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
@@ -1144,6 +1165,7 @@
                 <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scoreCount" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="screenUsername" candidateClass="UINavigationItem"/>
             </relationships>
         </class>
@@ -1177,6 +1199,9 @@
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -1191,6 +1216,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="W4z-93-GI4"/>
+        <segue reference="2Jj-0F-wzo"/>
     </inferredMetricsTieBreakers>
 </document>
