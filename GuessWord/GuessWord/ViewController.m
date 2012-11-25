@@ -8,13 +8,11 @@
 
 #import "ViewController.h"
 #import "GameInputOutput.h"
-//#include <SystemConfiguration/SystemConfiguration.h>
-//#include <netinet/in.h>
 #import "SystemConfiguration/SCNetworkReachability.h"
-
+#import "GameSettingsViewController.h"
 //following lines for importing JSON file
-#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-#define LatestsynPhonywordsURL [NSURL URLWithString: @"http://synphony.herokuapp.com/api/simplified/simple_english/words?focus=b&known=b,a,t,r,s"] 
+//#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//#define LatestsynPhonywordsURL [NSURL URLWithString: @"http://synphony.herokuapp.com/api/simplified/simple_english/words?focus=b&known=b,a,t,r,s"]
 
 @interface ViewController ()
 
@@ -46,11 +44,16 @@ NSMutableArray *allWordsFromWeb;
         {
             //get the json file based on the username and password
             //get the username and password stored in NSuserDefaults
+            //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
             
-            NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-            username = [userCredentials objectForKey:@"username"];
-            password = [userCredentials objectForKey:@"username"];
+            NSArray *arr = [GameSettingsViewController displayUserCredentials];
             
+            NSString *name = [arr objectAtIndex:0];
+            NSString *pass = [arr objectAtIndex:1];
+            
+            
+            username = name;
+            password = pass;
             //download the file if username is not empty
             if(![username isEqualToString:@""])
             {

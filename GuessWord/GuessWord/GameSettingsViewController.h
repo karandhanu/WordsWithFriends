@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *connectedToData;
 @property (weak, nonatomic) IBOutlet UISwitch *rememberMeToggle;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessage;
-
++ (NSArray*) displayUserCredentials;
 @end

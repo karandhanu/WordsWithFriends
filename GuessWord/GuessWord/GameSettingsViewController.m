@@ -58,10 +58,16 @@ bool hasDataConnection= NO;
 	// Do any additional setup after loading the view.
     [self displayInternetConnectionStatus];
     
+    //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
     //display the username, password
-    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-    username.text = [userCredentials objectForKey:@"username"];
-    password.text = [userCredentials objectForKey:@"username"];
+    NSArray *arr = [GameSettingsViewController displayUserCredentials];
+    
+    NSString *name = [arr objectAtIndex:0];
+    NSString *pass = [arr objectAtIndex:1];
+    //NSLog(@"%@",name);
+    //NSLog(@"%@",pass);
+    username.text = name;
+    password.text = pass;
 }
 
 - (void)didReceiveMemoryWarning
@@ -145,4 +151,13 @@ bool hasDataConnection= NO;
     return saveCredentails;
 }
 
+//http://stackoverflow.com/questions/3080713/method-with-2-return-values
++(NSArray*) displayUserCredentials
+{
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    
+    NSString *name = [userCredentials objectForKey:@"username"];
+    NSString *pass =[userCredentials objectForKey:@"password"];
+    return [NSArray arrayWithObjects:name,pass,nil];
+}
 @end

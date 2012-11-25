@@ -20,19 +20,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameInputOutput.m"
-         timestampString = "375506280.257874"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "+gameDataFromJSON:outputWordsTo:outputSpellingsTo:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "GuessWord/GameViewController.m"
          timestampString = "375505601.61592"
          startingColumnNumber = "9223372036854775807"
@@ -99,7 +86,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/GameSettingsViewController.m"
-         timestampString = "375506379.551716"
+         timestampString = "375508348.226924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "80"
@@ -112,7 +99,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/GameSettingsViewController.m"
-         timestampString = "375506379.551716"
+         timestampString = "375508348.226924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "115"
@@ -125,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/ViewController.m"
-         timestampString = "375506379.551716"
+         timestampString = "375508590.207942"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -137,53 +124,40 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameInputOutput.m"
-         timestampString = "375506280.257874"
+         filePath = "GuessWord/GameSettingsViewController.m"
+         timestampString = "375508348.226924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
-         landmarkName = "+writeJsonToFile:forUsername:forUserpassword:remoteFilename:"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
+         landmarkName = "+displayUserCredentials"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameInputOutput.m"
-         timestampString = "375506280.257874"
+         filePath = "GuessWord/GameSettingsViewController.m"
+         timestampString = "375508348.226924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "+writeJsonToFile:forUsername:forUserpassword:remoteFilename:"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
+         landmarkName = "+displayUserCredentials"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameInputOutput.m"
-         timestampString = "375506280.257874"
+         filePath = "GuessWord/GameSettingsViewController.h"
+         timestampString = "375508209.031065"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "31"
-         endingLineNumber = "31"
-         landmarkName = "+writeJsonToFile:forUsername:forUserpassword:remoteFilename:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameInputOutput.m"
-         timestampString = "375505046.763705"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "14"
-         endingLineNumber = "14"
-         landmarkName = "@implementation GameInputOutput"
-         landmarkType = "3">
+         startingLineNumber = "11"
+         endingLineNumber = "11"
+         landmarkName = "@interface GameSettingsViewController"
+         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
