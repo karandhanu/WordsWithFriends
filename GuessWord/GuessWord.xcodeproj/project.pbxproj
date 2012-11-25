@@ -157,7 +157,7 @@
 				D620761C16320A3500337739 /* Frameworks */,
 				D620762316320A3500337739 /* GuessWord */,
 				D620764716320A3500337739 /* GuessWordTests */,
-				D670CFB7165ED74900EFD4BA /* Pictures */,
+				D670CFB7165ED74900EFD4BA /* AllPictures */,
 				D620761A16320A3500337739 /* Products */,
 				D670CFB2164DBDF100EFD4BA /* Resources */,
 			);
@@ -192,7 +192,7 @@
 				D620762D16320A3500337739 /* AppDelegate.m */,
 				D620763516320A3500337739 /* MainStoryboard.storyboard */,
 				D67D6FEB165EE793004CC622 /* Controllers */,
-				D67D6FE0165EDF98004CC622 /* Support */,
+				D67D6FE0165EDF98004CC622 /* Reader */,
 				D620762416320A3500337739 /* Supporting Files */,
 			);
 			path = GuessWord;
@@ -234,21 +234,21 @@
 		D670CFB2164DBDF100EFD4BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D670CFB4164DBE0000EFD4BA /* Data */,
+				D670CFB4164DBE0000EFD4BA /* DataFile */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		D670CFB4164DBE0000EFD4BA /* Data */ = {
+		D670CFB4164DBE0000EFD4BA /* DataFile */ = {
 			isa = PBXGroup;
 			children = (
 				D67D6FDC165EDE6E004CC622 /* wordlist.json */,
 				D67D6FDD165EDE6E004CC622 /* wordlist.txt */,
 			);
-			name = Data;
+			name = DataFile;
 			sourceTree = "<group>";
 		};
-		D670CFB7165ED74900EFD4BA /* Pictures */ = {
+		D670CFB7165ED74900EFD4BA /* AllPictures */ = {
 			isa = PBXGroup;
 			children = (
 				D6AB3D9C1642055100CEF025 /* incorrect.png */,
@@ -266,17 +266,17 @@
 				D67D6FCF165ED809004CC622 /* FunWithWordsIcon57.png */,
 				D67D6FD0165ED809004CC622 /* FunWithWordsIcon114.png */,
 			);
-			name = Pictures;
+			name = AllPictures;
 			sourceTree = "<group>";
 		};
-		D67D6FE0165EDF98004CC622 /* Support */ = {
+		D67D6FE0165EDF98004CC622 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
 				D67D6FE1165EDFCF004CC622 /* Config.xcconfig */,
 				D67D6FF0165EF4F6004CC622 /* GameInputOutput.h */,
 				D67D6FF1165EF4F6004CC622 /* GameInputOutput.m */,
 			);
-			name = Support;
+			name = Reader;
 			sourceTree = "<group>";
 		};
 		D67D6FEB165EE793004CC622 /* Controllers */ = {

@@ -159,5 +159,31 @@
          landmarkName = "@interface GameSettingsViewController"
          landmarkType = "2">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GuessWord/GameInputOutput.m"
+         timestampString = "375509660.607467"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
+         landmarkName = "+writeJsonToFile:forUsername:forUserpassword:remoteFilename:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GuessWord/HighScoreViewController.m"
+         timestampString = "375513527.1485"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
+         landmarkName = "-saveScore"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

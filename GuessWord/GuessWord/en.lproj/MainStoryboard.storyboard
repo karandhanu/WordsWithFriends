@@ -191,26 +191,103 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FunWithWordsBasic.png" id="2kY-7W-iO7">
-                                <rect key="frame" x="0.0" y="0.0" width="329" height="465"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FunWithWordsBasic.png" id="q7v-9X-w0E">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WOg-Cm-usX">
-                                <rect key="frame" x="97" y="30" width="134" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Main Menu">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2" kind="modal" id="eyS-o7-Z3O"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="High Scores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6YX-AM-c0a">
-                                <rect key="frame" x="114" y="93" width="93" height="21"/>
+                            <navigationBar contentMode="scaleToFill" id="xtV-DI-gKK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="High Scores" id="wup-6i-kGw">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="mKQ-pj-sG9">
+                                            <connections>
+                                                <segue destination="2" kind="modal" identifier="doneHighScore" id="W4z-93-GI4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7db-Na-MKG">
+                                <rect key="frame" x="37" y="65" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EAb-ir-LX7">
+                                <rect key="frame" x="37" y="94" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="50R-HT-g8o">
+                                <rect key="frame" x="37" y="123" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LDJ-HT-Pz5">
+                                <rect key="frame" x="37" y="152" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mm8-q9-RlM">
+                                <rect key="frame" x="37" y="181" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VDo-MR-xc9">
+                                <rect key="frame" x="37" y="210" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NHt-qE-jKQ">
+                                <rect key="frame" x="37" y="239" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GG1-k4-R4y">
+                                <rect key="frame" x="37" y="268" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOc-yJ-96U">
+                                <rect key="frame" x="37" y="297" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="playerName10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="31J-ac-SX2">
+                                <rect key="frame" x="37" y="326" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="highScore1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QxZ-AG-E3H">
+                                <rect key="frame" x="188" y="65" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="highScore2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aIx-fw-fOS">
+                                <rect key="frame" x="188" y="94" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -218,10 +295,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="highScore1" destination="QxZ-AG-E3H" id="k9a-VT-QWR"/>
+                        <outlet property="highScore2" destination="aIx-fw-fOS" id="d0f-gy-Utm"/>
+                        <outlet property="playerName1" destination="7db-Na-MKG" id="Lgu-9a-WyU"/>
+                        <outlet property="playerName10" destination="31J-ac-SX2" id="fBb-2M-FdR"/>
+                        <outlet property="playerName2" destination="EAb-ir-LX7" id="v96-vh-2Fn"/>
+                        <outlet property="playerName3" destination="50R-HT-g8o" id="RF0-Ac-Xmf"/>
+                        <outlet property="playerName4" destination="LDJ-HT-Pz5" id="zQF-Hi-DJX"/>
+                        <outlet property="playerName5" destination="Mm8-q9-RlM" id="cth-yQ-efL"/>
+                        <outlet property="playerName6" destination="VDo-MR-xc9" id="Sab-yS-a7e"/>
+                        <outlet property="playerName7" destination="NHt-qE-jKQ" id="xAa-ZU-R2f"/>
+                        <outlet property="playerName8" destination="GG1-k4-R4y" id="P5l-18-hae"/>
+                        <outlet property="playerName9" destination="dOc-yJ-96U" id="IaD-KC-A7W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkl-Mg-NzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="785"/>
+            <point key="canvasLocation" x="257" y="728"/>
         </scene>
         <!--Game Settings View Controller-->
         <scene sceneID="pc7-p4-O8I">
@@ -945,9 +1036,6 @@
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doneEnterCredentials:"/>
-                <relationship kind="action" name="manualUpdate:"/>
-                <relationship kind="action" name="rememberCredentials:"/>
                 <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="errorMessage" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -999,15 +1087,26 @@
         </class>
         <class className="HighScoreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="highScore1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName10" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName7" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName8" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName9" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="LevelCompleteViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LevelCompleteViewController.h"/>
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Resume:"/>
-            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -1022,6 +1121,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vVy-rs-P76"/>
+        <segue reference="W4z-93-GI4"/>
     </inferredMetricsTieBreakers>
 </document>

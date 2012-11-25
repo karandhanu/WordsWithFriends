@@ -14,6 +14,27 @@
 
 @implementation HighScoreViewController
 
+@synthesize playerName1;
+@synthesize playerName2;
+//@synthesize playerName3;
+//@synthesize playerName4;
+//@synthesize playerName5;
+//@synthesize playerName6;
+//@synthesize playerName7;
+//@synthesize playerName8;
+//@synthesize playerName9;
+//@synthesize playerName10;
+@synthesize highScore1;
+@synthesize highScore2;
+//@synthesize highScore3;
+//@synthesize highScore4;
+//@synthesize highScore5;
+//@synthesize highScore6;
+//@synthesize highScore7;
+//@synthesize highScore8;
+//@synthesize highScore9;
+//@synthesize highScore10;
+
 int baseScore = 100;
 int highScore = 0;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,7 +49,10 @@ int highScore = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   // [self saveScore];
+    
 	// Do any additional setup after loading the view.
+    [self readScores];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,15 +68,15 @@ int highScore = 0;
 
 -(void)saveScore
 {
-    //NSString *string1;
-    //NSString *string2;
-    //NSString *string3;
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
     
-    NSArray *stringsArray = [NSArray arrayWithObjects:@"hello",@"this",@"world",@"etc",nil];
+    NSString *name = [userCredentials objectForKey:@"username"];
+    NSString *score = @"10";
     
-   // NSArray *stringsArray = [[NSArray alloc] arrayWithObjects: string1, string2, string3, nil];
-    [[NSUserDefaults standardUserDefaults] setObject:stringsArray forKey:@"MyStrings"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSUserDefaults *userScore = [NSUserDefaults standardUserDefaults];
+    
+    [userScore setObject:name forKey:@"playerName1"];
+    [userScore setObject:score forKey:@"highscore1"];
 }
 
 -(void)readScores
@@ -61,7 +85,12 @@ int highScore = 0;
     
     //printing out everything from nslog
     //NSLog(@"%@", [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys]);
+    NSUserDefaults *userScore = [NSUserDefaults standardUserDefaults];
     
+    playerName1.text = [userScore objectForKey:@"playerName1"];
+   highScore1.text = [userScore objectForKey:@"highscore1"];
+  //  playerName1.hidden = NO;
+    //highScore1.hidden = NO;
 }
 
 
