@@ -274,7 +274,10 @@ int gameScore = 0;
     {
         
         NSString *score = [NSString stringWithFormat:@"%d", gameScore];
-        [HighScoreViewController saveScore:score];
+        if(![score isEqualToString:@"0"])
+        {
+            [HighScoreViewController saveScore:score];
+        }
         [self performSegueWithIdentifier:@"identifier_levelComplete" sender:(self)];
     }
     
@@ -298,7 +301,10 @@ int gameScore = 0;
 {
     //save the score before player exists the game
     NSString *score = [NSString stringWithFormat:@"%d", gameScore];
-    [HighScoreViewController saveScore:score];
+    if(![score isEqualToString:@"0"])
+    {
+        [HighScoreViewController saveScore:score];
+    }
     [self performSegueWithIdentifier:@"mainMenuIdentifier" sender:self];
 }
 

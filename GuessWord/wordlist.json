@@ -116,6 +116,15 @@
                                     ]
               },
               {
+              "id": "509ae0abdb98a9dfbff5e5dc",
+              "name": "cat",
+              "spelling_patterns": [
+                                    "c",
+                                    "a",
+                                    "t"
+                                    ]
+              },
+              {
               "id": "509ae0acdb98a9dfbff5e5df",
               "name": "tart",
               "spelling_patterns": [

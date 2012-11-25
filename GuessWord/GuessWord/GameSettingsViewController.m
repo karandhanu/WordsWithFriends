@@ -43,7 +43,6 @@ bool hasDataConnection= NO;
     {
         //get the json file based on the username and password
         [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUsername:username.text forUserpassword:password.text remoteFilename:@"wordlist.json"];
-        
     }
     if([self saveUserCredentials])
     {
