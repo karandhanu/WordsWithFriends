@@ -39,7 +39,6 @@
     NSURL *url = [NSURL URLWithString:@"http://www.linkedin.com/in/karandhanu"];
     if (![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);
-    
 }
 
 @end

@@ -120,7 +120,6 @@ int highScore = 0;
 //this method displays the top ten scores
 -(void)displayScores
 {
-
     NSUserDefaults *userScore = [NSUserDefaults standardUserDefaults];
     for(int i = 1;  i <= 10; i++)
     {

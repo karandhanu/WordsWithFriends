@@ -13,16 +13,6 @@
 
 @implementation GameInputOutput
 
-+ (void) getCurrentTextListFrom:(NSString *)baseURL forUser:(NSString *)username remoteFilename:(NSString *)filename
-{
-    //path to the file to down
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@", baseURL, username, filename]];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    [urlData writeToFile:filePath atomically:YES];
-}
-
 ///This method will download the file from JSON source url
 //http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
 
