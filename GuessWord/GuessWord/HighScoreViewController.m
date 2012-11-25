@@ -89,7 +89,7 @@ int highScore = 0;
     }
     else if([retrievedCounter isEqualToString:@"10"])
     {
-        counter = 1;
+        counter = 0;
     }
     else
     {
@@ -115,24 +115,14 @@ int highScore = 0;
     [userScore setObject:name forKey:playerName];
     [userScore setObject:score forKey:highscore];
     [userScore setObject:count forKey:@"playerCounter"];
-    
-    NSLog(@"%@",name);
-    NSLog(@"%@",score);
-    NSLog(@"%@",playerName);
-    NSLog(@"%@",highscore);
-    NSLog(@"%@",count);
 }
 
+//this method displays the top ten scores
 -(void)displayScores
 {
 
     NSUserDefaults *userScore = [NSUserDefaults standardUserDefaults];
-    
-    NSString *retrievedCounter = [userScore objectForKey:@"playerCounter"];
-    
-    int counter = [retrievedCounter intValue];
-    
-    for(int i = 1;  i <= counter; i++)
+    for(int i = 1;  i <= 10; i++)
     {
         NSString *count = [NSString stringWithFormat:@"%d", i];
         

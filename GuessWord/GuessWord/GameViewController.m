@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "LevelCompleteViewController.h"
 #import "GameInputOutput.h"
+#import "HighScoreViewController.h"
 
 @interface GameViewController ()
 
@@ -78,7 +79,7 @@ bool isWordComplete = false;
 int totalWordCompletedCounter = 0;
 
 //base score to be awarded
-int gameScore = 50;
+int gameScore = 0;
 
 
 //Initializes the arrays of UI objects and inserts the UI Objects
@@ -157,6 +158,7 @@ int gameScore = 50;
     TriesDisplay.text = TotalTriesAvailable;
     
 }
+
 //This method enables the keyboard
 -(void) enableAllLetters
 {
@@ -270,27 +272,33 @@ int gameScore = 50;
     }
     else
     {
-         [self performSegueWithIdentifier:@"identifier_levelComplete" sender:(self)];
+        
+        NSString *score = [NSString stringWithFormat:@"%d", gameScore];
+        [HighScoreViewController saveScore:score];
+        [self performSegueWithIdentifier:@"identifier_levelComplete" sender:(self)];
     }
     
 }
 
+//this method updates the score on the screen
 -(void)checkNumberofWordsUserCompleteInLevel:(BOOL) completeWord
 {
     if(completeWord)
     {
+        gameScore = 50;
         totalWordCompletedCounter++;
         gameScore = totalWordCompletedCounter * gameScore;
         NSString *score = [NSString stringWithFormat:@"%d", gameScore];
         scoreCount.text = score;
-        NSLog(@"number of words complete %d", totalWordCompletedCounter);
     }
-    
 }
 
+//ths method moves to main menu and save score
 - (IBAction)backToMainMenu:(id)sender
 {
-    NSLog(@"%d",totalWordCompletedCounter);
+    //save the score before player exists the game
+    NSString *score = [NSString stringWithFormat:@"%d", gameScore];
+    [HighScoreViewController saveScore:score];
     [self performSegueWithIdentifier:@"mainMenuIdentifier" sender:self];
 }
 

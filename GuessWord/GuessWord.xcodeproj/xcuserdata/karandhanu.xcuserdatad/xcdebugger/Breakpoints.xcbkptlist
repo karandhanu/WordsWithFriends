@@ -7,58 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "375524687.637532"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "305"
-         endingLineNumber = "305"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "375524687.637532"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "329"
-         endingLineNumber = "329"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "375524687.637532"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "331"
-         endingLineNumber = "331"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "375524687.637532"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "337"
-         endingLineNumber = "337"
-         landmarkName = "-buttonPressed:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "GuessWord/GameSettingsViewController.m"
          timestampString = "375519645.497221"
          startingColumnNumber = "9223372036854775807"
@@ -151,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/HighScoreViewController.m"
-         timestampString = "375522150.351657"
+         timestampString = "375527129.379562"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "-displayScores"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,25 +112,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GuessWord/HighScoreViewController.m"
-         timestampString = "375522150.351657"
+         timestampString = "375527129.379562"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-displayScores"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GuessWord/GameViewController.m"
-         timestampString = "375524687.637532"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "293"
-         endingLineNumber = "293"
-         landmarkName = "-backToMainMenu:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
