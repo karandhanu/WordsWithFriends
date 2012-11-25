@@ -59,9 +59,9 @@ bool hasDataConnection= NO;
     [self displayInternetConnectionStatus];
     
     //display the username, password
-    username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    username.text = [userCredentials objectForKey:@"username"];
+    password.text = [userCredentials objectForKey:@"username"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -144,16 +144,5 @@ bool hasDataConnection= NO;
     }
     return saveCredentails;
 }
-
-//-(void)saveSettings:(SharedData *)d{
-    //settings=d;
-    
-    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    //[prefs setObject:settings.masterLocation forKey:@"masterLocation"];
-    //[prefs setObject:settings.masterPort forKey:@"masterPort"];
-    //[prefs setObject:settings.userName forKey:@"userName"];
-    //[prefs setObject:settings.passWord forKey:@"passWord"];
-    //[prefs setObject:settings.autoLogin forKey:@"autoLogin"];
-//}
 
 @end

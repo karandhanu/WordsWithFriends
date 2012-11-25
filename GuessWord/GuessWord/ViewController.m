@@ -46,8 +46,10 @@ NSMutableArray *allWordsFromWeb;
         {
             //get the json file based on the username and password
             //get the username and password stored in NSuserDefaults
-            username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-            password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+            
+            NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+            username = [userCredentials objectForKey:@"username"];
+            password = [userCredentials objectForKey:@"username"];
             
             //download the file if username is not empty
             if(![username isEqualToString:@""])
