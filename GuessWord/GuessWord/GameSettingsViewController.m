@@ -64,8 +64,7 @@ bool hasDataConnection= NO;
     
     NSString *name = [arr objectAtIndex:0];
     NSString *pass = [arr objectAtIndex:1];
-    //NSLog(@"%@",name);
-    //NSLog(@"%@",pass);
+
     username.text = name;
     password.text = pass;
 }
