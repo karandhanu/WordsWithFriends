@@ -85,6 +85,7 @@ int totalWordCompletedCounter = 0;
 }
 
 //this creates the wordlist from the jsonfile that was downloaded when game was set up
+//by Team Red Panda
 - (void) loadGameData
 {
     NSString *filepath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];

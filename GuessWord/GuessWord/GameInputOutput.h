@@ -11,6 +11,6 @@
 @interface GameInputOutput : NSObject
 + (void) getCurrentTextListFrom:(NSString *)baseURL forUser:(NSString *)username remoteFilename:(NSString *)filename;
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray;
-+ (void) writeJsonToFile:(NSString *)baseURL forUser:(NSString *)username forpassword:(NSString *)password remoteFilename:(NSString *)filename;
++ (void) writeJsonToFile:(NSString *)baseURL forUsername:(NSString *)username forUserpassword:(NSString *)password remoteFilename:(NSString *)filename;
 + (BOOL)isDataSourceAvailable;
 @end

@@ -9,6 +9,7 @@
 #import "GameSettingsViewController.h"
 #import "GameInputOutput.h"
 #import "GameViewController.h"
+#include <SystemConfiguration/SystemConfiguration.h>
 
 @interface GameSettingsViewController ()
 
@@ -41,7 +42,7 @@ bool hasDataConnection= NO;
     if(![username.text isEqualToString:@""])
     {
         //get the json file based on the username and password
-        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUser:username.text forpassword:password.text remoteFilename:@"wordlist.json"];
+        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUsername:username.text forUserpassword:password.text remoteFilename:@"wordlist.json"];
         
     }
     if([self saveUserCredentials])
@@ -61,11 +62,6 @@ bool hasDataConnection= NO;
     username.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     password.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
 
-}
-
-- (IBAction)manualUpdate:(id)sender
-{
-    [GameInputOutput getCurrentTextListFrom:@"http://chrishobbs.ca/groupb" forUser:@"kam" remoteFilename:@"/wordlist.txt"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,6 +97,7 @@ bool hasDataConnection= NO;
     }
 }
 
+//http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
 - (BOOL) saveUserCredentials
 {
     NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
@@ -109,7 +106,7 @@ bool hasDataConnection= NO;
     if(rememberMeToggle.isOn)
     {
         
-        if ((![username.text isEqualToString:@""] && ![username.text isEqualToString:@"username"]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]))
+        if ((![username.text isEqualToString:@""]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]))
         {
             [userCredentials setObject:username.text forKey:@"username"];
             [userCredentials setObject:password.text forKey:@"password"];
@@ -147,5 +144,16 @@ bool hasDataConnection= NO;
     }
     return saveCredentails;
 }
+
+//-(void)saveSettings:(SharedData *)d{
+    //settings=d;
+    
+    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //[prefs setObject:settings.masterLocation forKey:@"masterLocation"];
+    //[prefs setObject:settings.masterPort forKey:@"masterPort"];
+    //[prefs setObject:settings.userName forKey:@"userName"];
+    //[prefs setObject:settings.passWord forKey:@"passWord"];
+    //[prefs setObject:settings.autoLogin forKey:@"autoLogin"];
+//}
 
 @end

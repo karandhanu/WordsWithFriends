@@ -24,9 +24,11 @@
 }
 
 ///This method will download the file from JSON source url
-+ (void) writeJsonToFile:(NSString *)baseURL forUser:(NSString *)username forpassword:(NSString *)password remoteFilename:(NSString *)filename
+//http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
+
++ (void) writeJsonToFile:(NSString *)baseURL forUsername:(NSString *)username forUserpassword:(NSString *)password remoteFilename:(NSString *)filename
 {
-    //no password for now
+    //no password for now since we have not recived an  api to use this password
     password = @"";
     NSString *pass = password;
      NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];

@@ -53,7 +53,8 @@ NSMutableArray *allWordsFromWeb;
             if(![username isEqualToString:@""])
             {
                 //get the json file based on the username and password
-                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUser:username forpassword:password remoteFilename:@"wordlist.json"];
+                //method from Red Panda team
+                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUsername:username forUserpassword:password remoteFilename:@"wordlist.json"];
                 isFirstLoad = NO;
             }
         }
