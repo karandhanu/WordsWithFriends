@@ -13,17 +13,17 @@
 
 @implementation GameInputOutput
 
-///This method will download the file from JSON source url
+///This method will download the file from JSON source url and used from
 //http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
 
-+ (void) writeJsonToFile:(NSString *)baseURL forUsername:(NSString *)username forUserpassword:(NSString *)password remoteFilename:(NSString *)filename
++ (void) writeJsonToFile:(NSString *)stringURL authenticationToken:(NSString *)token
 {
     //no password for now since we have not recived an  api to use this password
-    password = @"";
-   // NSString *pass = password;
-     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
+    //password = @"";
+    // NSString *pass = password;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     //construct the url to down the json file from somethings like www.synmphy.com/kam/wordlist.JSON=?xkdkofofofososos
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@%@", baseURL, username, filename, password]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", stringURL, token]];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     //attempt to download live data
     if (urlData)
@@ -31,6 +31,7 @@
         [urlData writeToFile:filePath atomically:YES];
     }
 }
+
 
 
 ///this method is taken from Team Red Panda

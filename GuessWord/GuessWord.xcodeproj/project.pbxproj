@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60880AF16683651007AE0B8 /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = D60880AE16683651007AE0B8 /* credentials.json */; };
 		D60DBE13166026230009E49E /* DevelopersInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60DBE12166026230009E49E /* DevelopersInfoViewController.m */; };
 		D620761E16320A3500337739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D620761D16320A3500337739 /* UIKit.framework */; };
 		D620762016320A3500337739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D620761F16320A3500337739 /* Foundation.framework */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60880AE16683651007AE0B8 /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		D60DBE11166026230009E49E /* DevelopersInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevelopersInfoViewController.h; sourceTree = "<group>"; };
 		D60DBE12166026230009E49E /* DevelopersInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevelopersInfoViewController.m; sourceTree = "<group>"; };
 		D620761916320A3500337739 /* GuessWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +242,7 @@
 		D670CFB4164DBE0000EFD4BA /* DataFile */ = {
 			isa = PBXGroup;
 			children = (
+				D60880AE16683651007AE0B8 /* credentials.json */,
 				D67D6FDC165EDE6E004CC622 /* wordlist.json */,
 			);
 			name = DataFile;
@@ -391,6 +394,7 @@
 				D67D6FD5165ED809004CC622 /* FunWithWordsIcon57.png in Resources */,
 				D67D6FD6165ED809004CC622 /* FunWithWordsIcon114.png in Resources */,
 				D67D6FDE165EDE6E004CC622 /* wordlist.json in Resources */,
+				D60880AF16683651007AE0B8 /* credentials.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

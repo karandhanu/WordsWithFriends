@@ -42,7 +42,7 @@ bool hasDataConnection= NO;
     if(![username.text isEqualToString:@""])
     {
         //get the json file based on the username and password
-        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" forUsername:username.text forUserpassword:password.text remoteFilename:@"wordlist.json"];
+        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:password.text];
     }
     if([self saveUserCredentials])
     {
@@ -50,6 +50,81 @@ bool hasDataConnection= NO;
     }
 }
 
+- (void) authenicateUserAccount
+{
+    NSArray *arr = [GameSettingsViewController displayUserCredentials];
+    
+    NSString *name = [arr objectAtIndex:0];
+    NSString *pass = [arr objectAtIndex:1];
+    
+    NSString *data = [[NSString alloc] initWithFormat:@"{\"login\": [{\"username\": \"%@,%@\"}],\"ReceiverId\": \"Receiver  2\",\"SenderId\": \"Sender\",\"Version\": \"1.0.0.0\"}", name, pass];
+   NSData *postData = [data dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    //NSString *post = [NSString stringWithFormat:@"example=test&p=1&test=yourPostMessage&this=isNotReal"];
+    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSLog(@"%@",data);
+    
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://YourURL.com/FakeURL"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+   
+    NSURLResponse *response;
+    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
+    NSLog(@"Reply: %@", theReply);
+}
+
+//http://stackoverflow.com/questions/7673127/iphone-sdk-xcode-4-2-ios-5-how-do-i-send-a-json-to-url-post-and-get-resolv
+//http://stackoverflow.com/questions/4085978/json-post-request-on-the-iphone-using-https
+- (void) auth
+{
+    NSString *jsonRequest = @"{\"login\": [{\"username\":\"user\",\"password\":\"letmein\",\"application\":\"wordswithfriends\",\"version\":\"1.0\"}]";
+    NSLog(@"Request: %@", jsonRequest);
+    
+    NSURL *url = [NSURL URLWithString:@"https://mydomain.com/Method/"];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSData *requestData = [NSData dataWithBytes:[jsonRequest UTF8String] length:[jsonRequest length]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody: requestData];
+    NSLog(@"%@",requestData);
+    
+    NSURLResponse *response;
+    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
+    NSLog(@"Reply: %@", theReply);
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]
+             forAuthenticationChallenge:challenge];
+    }
+    
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+}
+
+- (void) connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    if([[protectionSpace authenticationMethod] isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        //return YES;
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -57,6 +132,8 @@ bool hasDataConnection= NO;
 	// Do any additional setup after loading the view.
     [self displayInternetConnectionStatus];
     
+    [self auth];
+    //this methof is drived from
     //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
     //display the username, password
     NSArray *arr = [GameSettingsViewController displayUserCredentials];
@@ -101,6 +178,7 @@ bool hasDataConnection= NO;
     }
 }
 
+//this method is drived from 
 //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
 - (BOOL) saveUserCredentials
 {
@@ -149,6 +227,7 @@ bool hasDataConnection= NO;
     return saveCredentails;
 }
 
+//This method is drived from
 //http://stackoverflow.com/questions/3080713/method-with-2-return-values
 +(NSArray*) displayUserCredentials
 {
