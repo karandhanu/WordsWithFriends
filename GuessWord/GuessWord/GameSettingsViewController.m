@@ -38,20 +38,23 @@ bool hasDataConnection= NO;
 {
     NSArray *arr = [GameSettingsViewController displayUserCredentials];
     
-    //NSString *name = [arr objectAtIndex:0];
-    //NSString *pass = [arr objectAtIndex:1];
-    NSString *token = [arr objectAtIndex:2];
     //1.download the file when user has done entering username and password
     //2. download the file from sever only if username and password is not bank
     //3. I need to find a to authenicate these usernames and passwords
-    if(![token isEqualToString:@""])
+    [self authenicateUserAccount];
+    NSString *token = [arr objectAtIndex:2];
+    NSLog(@"%@",token);
+    if(![token isEqualToString:@"token"])
     {
-        //get the json file based on the username and password
-        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:token];
-    }
-    if([self saveUserCredentials:@"token"])
-    {
-        [self performSegueWithIdentifier:@"doneCredentials" sender:self];
+        if(![token isEqualToString:@""])
+        {
+            if([self saveUserCredentials:token])
+            {
+                    //get the json file based on the username and password
+                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:token];
+                [self performSegueWithIdentifier:@"doneCredentials" sender:self];
+            }
+        }
     }
 }
 
@@ -60,14 +63,10 @@ bool hasDataConnection= NO;
 //http://stackoverflow.com/questions/4085978/json-post-request-on-the-iphone-using-https
 - (void) authenicateUserAccount
 {
-    NSArray *arr = [GameSettingsViewController displayUserCredentials];
-    
-    NSString *name = [arr objectAtIndex:0];
-    NSString *pass = [arr objectAtIndex:1];
-    
-    NSString *jsonRequest = @"{\"login\": {\"username\":\"karandhanu@gmail.com\",\"password\":\"hello003\",\"application\":\"my test app\",\"version\":\"0.0\"}}";
-    //NSLog(@"Request: %@", jsonRequest);
-    
+    NSString* jsonRequest = [NSString stringWithFormat:@"{\"login\": {\"username\":\"%@\",\"password\":\"%@\",\"application\":\"my test app\",\"version\":\"0.0\"}}", username.text,password.text];
+    NSLog(@"%@",jsonRequest);
+    //NSString *jsonRequest = @"{\"login\": {\"username\":\"karandhanu@gmail.com\",\"password\":\"hello003\",\"application\":\"my test app\",\"version\":\"0.0\"}}";
+    //use this url to send the authentication user information to
     NSURL *url = [NSURL URLWithString:@"http://helpchildrenread.org/api/simplified/login"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -91,7 +90,6 @@ bool hasDataConnection= NO;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
    
     NSData *userCredentials = a;
-    NSLog(@"%@",a);
     [userCredentials writeToFile:filePath atomically:YES];
     
     NSError *error;
@@ -101,7 +99,6 @@ bool hasDataConnection= NO;
     NSDictionary *login = [JSONDictionary objectForKey:@"login"];
     //get the auth_token
     NSDictionary *loginInfo = login;
-    NSLog(@"%@",loginInfo);
     
     if(loginInfo == NULL)
     {
@@ -111,9 +108,9 @@ bool hasDataConnection= NO;
     else
     {
         NSString *authCode = [loginInfo objectForKey:@"auth_token"];
+        NSLog(@"%@",authCode);
         [self saveUserCredentials:authCode];
     }
-        //NSLog(@"%@",authCode);
 }
 
 
@@ -142,8 +139,8 @@ bool hasDataConnection= NO;
 	// Do any additional setup after loading the view.
     [self displayInternetConnectionStatus];
     
-    [self authenicateUserAccount];
-    //[self saveAuthToken];
+    
+    
     //this methof is drived from
     //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
     //display the username, password
@@ -154,6 +151,9 @@ bool hasDataConnection= NO;
 
     username.text = name;
     password.text = pass;
+    
+    //authenicate user
+    [self authenicateUserAccount];
 }
 
 - (void)didReceiveMemoryWarning
@@ -206,7 +206,11 @@ bool hasDataConnection= NO;
     if(rememberMeToggle.isOn)
     {
         
-        if ((![username.text isEqualToString:@""]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]) && (![token isEqualToString:@""]))
+        if (
+            (![username.text isEqualToString:@""]) &&
+            (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]) &&
+            (![token isEqualToString:@""] || ![token isEqualToString:@"token"])
+            )
         {
             [userCredentials setObject:username.text forKey:@"username"];
             [userCredentials setObject:password.text forKey:@"password"];
