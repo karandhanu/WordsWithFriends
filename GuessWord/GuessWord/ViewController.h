@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+extern bool shouldDownloadFile;
 @property(weak, nonatomic ) IBOutlet UILabel *display;
 
 @end

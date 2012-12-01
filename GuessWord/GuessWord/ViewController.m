@@ -10,9 +10,6 @@
 #import "GameInputOutput.h"
 #import "SystemConfiguration/SCNetworkReachability.h"
 #import "GameSettingsViewController.h"
-//following lines for importing JSON file
-//#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//#define LatestsynPhonywordsURL [NSURL URLWithString: @"http://synphony.herokuapp.com/api/simplified/simple_english/words?focus=b&known=b,a,t,r,s"]
 
 @interface ViewController ()
 
@@ -30,7 +27,7 @@ NSMutableArray *spellingpattern;
 
 NSMutableArray *allWordsFromWeb;
 
-
+bool shouldDownloadFile = YES;
 
 - (void)viewDidLoad
 {
@@ -40,28 +37,21 @@ NSMutableArray *allWordsFromWeb;
     //download the new Json wordlist only if we are connected to the internet
     if(hasDataConnectionAvailable)
     {
-        if (isFirstLoad)
+        if (shouldDownloadFile)
         {
-            //get the json file based on the username and password
+            NSArray *arr = [GameSettingsViewController displayUserCredentials];
+            
+            NSString *authToken = [arr objectAtIndex:2];
             //get the username and password stored in NSuserDefaults
             //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
             
-            NSArray *arr = [GameSettingsViewController displayUserCredentials];
-            
-            NSString *name = [arr objectAtIndex:0];
-            NSString *pass = [arr objectAtIndex:1];
-            NSString *authToken = [arr objectAtIndex:2];
-            
-            
-            username = name;
-            password = pass;
             //download the file if username is not empty
-            if(![username isEqualToString:@""])
+            if(![authToken isEqualToString:@""])
             {
                 //get the json file based on the username and password
                 //method from Red Panda team
                 [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:authToken];
-                isFirstLoad = NO;
+                shouldDownloadFile = NO;
             }
         }
     }

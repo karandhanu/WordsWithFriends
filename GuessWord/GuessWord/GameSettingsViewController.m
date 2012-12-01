@@ -10,6 +10,7 @@
 #import "GameInputOutput.h"
 #import "GameViewController.h"
 #include <SystemConfiguration/SystemConfiguration.h>
+#import "ViewController.h"
 
 @interface GameSettingsViewController ()
 
@@ -64,9 +65,7 @@ bool hasDataConnection= NO;
 - (void) authenicateUserAccount
 {
     NSString* jsonRequest = [NSString stringWithFormat:@"{\"login\": {\"username\":\"%@\",\"password\":\"%@\",\"application\":\"my test app\",\"version\":\"0.0\"}}", username.text,password.text];
-    NSLog(@"%@",jsonRequest);
-    //NSString *jsonRequest = @"{\"login\": {\"username\":\"karandhanu@gmail.com\",\"password\":\"hello003\",\"application\":\"my test app\",\"version\":\"0.0\"}}";
-    //use this url to send the authentication user information to
+
     NSURL *url = [NSURL URLWithString:@"http://helpchildrenread.org/api/simplified/login"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -85,11 +84,11 @@ bool hasDataConnection= NO;
     NSMutableData *retrievedData = [NSMutableData data];
     [retrievedData appendData:data];
     
-    NSMutableString *a = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
+    NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
    
-    NSData *userCredentials = a;
+    NSData *userCredentials = allInfo;
     [userCredentials writeToFile:filePath atomically:YES];
     
     NSError *error;
@@ -108,7 +107,6 @@ bool hasDataConnection= NO;
     else
     {
         NSString *authCode = [loginInfo objectForKey:@"auth_token"];
-        NSLog(@"%@",authCode);
         [self saveUserCredentials:authCode];
     }
 }
@@ -261,6 +259,5 @@ bool hasDataConnection= NO;
     NSString *token = [userCredentials objectForKey:@"authcode"];
     return [NSArray arrayWithObjects:name,pass,token,nil];
 }
-
 
 @end
