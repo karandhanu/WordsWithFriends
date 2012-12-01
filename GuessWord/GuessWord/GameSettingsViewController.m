@@ -36,20 +36,28 @@ bool hasDataConnection= NO;
 
 - (IBAction)doneEnterCredentials:(id)sender
 {
+    NSArray *arr = [GameSettingsViewController displayUserCredentials];
+    
+    //NSString *name = [arr objectAtIndex:0];
+    //NSString *pass = [arr objectAtIndex:1];
+    NSString *token = [arr objectAtIndex:2];
     //1.download the file when user has done entering username and password
     //2. download the file from sever only if username and password is not bank
     //3. I need to find a to authenicate these usernames and passwords
-    if(![username.text isEqualToString:@""])
+    if(![token isEqualToString:@""])
     {
         //get the json file based on the username and password
-        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:password.text];
+        [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:token];
     }
-    if([self saveUserCredentials])
+    if([self saveUserCredentials:@"token"])
     {
         [self performSegueWithIdentifier:@"doneCredentials" sender:self];
     }
 }
 
+
+//http://stackoverflow.com/questions/7673127/iphone-sdk-xcode-4-2-ios-5-how-do-i-send-a-json-to-url-post-and-get-resolv
+//http://stackoverflow.com/questions/4085978/json-post-request-on-the-iphone-using-https
 - (void) authenicateUserAccount
 {
     NSArray *arr = [GameSettingsViewController displayUserCredentials];
@@ -57,39 +65,10 @@ bool hasDataConnection= NO;
     NSString *name = [arr objectAtIndex:0];
     NSString *pass = [arr objectAtIndex:1];
     
-    NSString *data = [[NSString alloc] initWithFormat:@"{\"login\": [{\"username\": \"%@,%@\"}],\"ReceiverId\": \"Receiver  2\",\"SenderId\": \"Sender\",\"Version\": \"1.0.0.0\"}", name, pass];
-   NSData *postData = [data dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *jsonRequest = @"{\"login\": {\"username\":\"karandhanu@gmail.com\",\"password\":\"hello003\",\"application\":\"my test app\",\"version\":\"0.0\"}}";
+    //NSLog(@"Request: %@", jsonRequest);
     
-    //NSString *post = [NSString stringWithFormat:@"example=test&p=1&test=yourPostMessage&this=isNotReal"];
-    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSLog(@"%@",data);
-    
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://YourURL.com/FakeURL"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    
-   
-    NSURLResponse *response;
-    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
-    NSLog(@"Reply: %@", theReply);
-}
-
-//http://stackoverflow.com/questions/7673127/iphone-sdk-xcode-4-2-ios-5-how-do-i-send-a-json-to-url-post-and-get-resolv
-//http://stackoverflow.com/questions/4085978/json-post-request-on-the-iphone-using-https
-- (void) auth
-{
-    NSString *jsonRequest = @"{\"login\": [{\"username\":\"user\",\"password\":\"letmein\",\"application\":\"wordswithfriends\",\"version\":\"1.0\"}]";
-    NSLog(@"Request: %@", jsonRequest);
-    
-    NSURL *url = [NSURL URLWithString:@"https://mydomain.com/Method/"];
+    NSURL *url = [NSURL URLWithString:@"http://helpchildrenread.org/api/simplified/login"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     NSData *requestData = [NSData dataWithBytes:[jsonRequest UTF8String] length:[jsonRequest length]];
@@ -99,13 +78,44 @@ bool hasDataConnection= NO;
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
-    NSLog(@"%@",requestData);
-    
-    NSURLResponse *response;
-    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
-    NSLog(@"Reply: %@", theReply);
+    [NSURLConnection connectionWithRequest:request delegate:self];
 }
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSMutableData *retrievedData = [NSMutableData data];
+    [retrievedData appendData:data];
+    
+    NSMutableString *a = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
+   
+    NSData *userCredentials = a;
+    NSLog(@"%@",a);
+    [userCredentials writeToFile:filePath atomically:YES];
+    
+    NSError *error;
+    NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];
+    //get the log in information from the credentials file
+    NSDictionary *login = [JSONDictionary objectForKey:@"login"];
+    //get the auth_token
+    NSDictionary *loginInfo = login;
+    NSLog(@"%@",loginInfo);
+    
+    if(loginInfo == NULL)
+    {
+        errorMessage.text = @"Invalid username or password";
+        errorMessage.hidden = NO;
+    }
+    else
+    {
+        NSString *authCode = [loginInfo objectForKey:@"auth_token"];
+        [self saveUserCredentials:authCode];
+    }
+        //NSLog(@"%@",authCode);
+}
+
 
 - (void) connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
@@ -132,7 +142,8 @@ bool hasDataConnection= NO;
 	// Do any additional setup after loading the view.
     [self displayInternetConnectionStatus];
     
-    [self auth];
+    [self authenicateUserAccount];
+    //[self saveAuthToken];
     //this methof is drived from
     //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
     //display the username, password
@@ -178,9 +189,16 @@ bool hasDataConnection= NO;
     }
 }
 
+-(void) saveAuthToken
+{
+    NSString *token = @"43rg78pS6HX0c2g5pDL1XQ";
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    [userCredentials setObject:token forKey:@"authcode"];
+}
+
 //this method is drived from 
 //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
-- (BOOL) saveUserCredentials
+- (BOOL) saveUserCredentials:(NSString *)token
 {
     NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
     bool saveCredentails = false;
@@ -188,10 +206,11 @@ bool hasDataConnection= NO;
     if(rememberMeToggle.isOn)
     {
         
-        if ((![username.text isEqualToString:@""]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]))
+        if ((![username.text isEqualToString:@""]) && (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]) && (![token isEqualToString:@""]))
         {
             [userCredentials setObject:username.text forKey:@"username"];
             [userCredentials setObject:password.text forKey:@"password"];
+            [userCredentials setObject:token forKey:@"authcode"];
             return true;
         }
         else if ([username.text isEqualToString:@""] &&[password.text isEqualToString:@""])
@@ -235,6 +254,9 @@ bool hasDataConnection= NO;
     
     NSString *name = [userCredentials objectForKey:@"username"];
     NSString *pass =[userCredentials objectForKey:@"password"];
-    return [NSArray arrayWithObjects:name,pass,nil];
+    NSString *token = [userCredentials objectForKey:@"authcode"];
+    return [NSArray arrayWithObjects:name,pass,token,nil];
 }
+
+
 @end

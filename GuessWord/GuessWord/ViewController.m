@@ -50,6 +50,7 @@ NSMutableArray *allWordsFromWeb;
             
             NSString *name = [arr objectAtIndex:0];
             NSString *pass = [arr objectAtIndex:1];
+            NSString *authToken = [arr objectAtIndex:2];
             
             
             username = name;
@@ -59,7 +60,7 @@ NSMutableArray *allWordsFromWeb;
             {
                 //get the json file based on the username and password
                 //method from Red Panda team
-                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:password];
+                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:authToken];
                 isFirstLoad = NO;
             }
         }

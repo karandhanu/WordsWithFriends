@@ -40,3 +40,12 @@ http://stackoverflow.com/questions/5813298/local-high-scores-code-for-iphone
 //saving user data
 usernames, firstname, lastname
 http://mobile.tutsplus.com/tutorials/iphone/nsuserdefaults_iphone-sdk/
+
+
+curl -i -X POST -d '{"login":{"username":"karandhanu@gmail.com", "password":"hello003","application":"my test app","version":"0.0"}}' -H "Content-Type: application/json" http://helpchildrenread.org/api/simplified/login
+
+http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=QCBfwTkby36qNGfbpIWpcw
+
+this is for hotmail
+
+curl -i -X POST -d '{"login":{"username":"karandhanu@hotmail.com", "password":"hello003","application":"my test app","version":"0.0"}}' -H "Content-Type: application/json" http://helpchildrenread.org/api/simplified/login

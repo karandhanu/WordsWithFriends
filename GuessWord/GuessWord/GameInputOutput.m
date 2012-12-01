@@ -21,9 +21,11 @@
     //no password for now since we have not recived an  api to use this password
     //password = @"";
     // NSString *pass = password;
+    token = @"1uHRr-hpInQRl2Ia5M4vuQ";
+    stringURL = @"http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     //construct the url to down the json file from somethings like www.synmphy.com/kam/wordlist.JSON=?xkdkofofofososos
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", stringURL, token]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, token]];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     //attempt to download live data
     if (urlData)
