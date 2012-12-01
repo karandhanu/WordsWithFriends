@@ -52,7 +52,7 @@ bool hasDataConnection= NO;
             if([self saveUserCredentials:token])
             {
                     //get the json file based on the username and password
-                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:token];
+                [GameInputOutput writeJsonToFile:token];
                 [self performSegueWithIdentifier:@"doneCredentials" sender:self];
             }
         }

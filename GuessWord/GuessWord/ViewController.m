@@ -50,7 +50,7 @@ bool shouldDownloadFile = YES;
             {
                 //get the json file based on the username and password
                 //method from Red Panda team
-                [GameInputOutput writeJsonToFile:@"http://chrishobbs.ca/groupb" authenticationToken:authToken];
+                [GameInputOutput writeJsonToFile:authToken];
                 shouldDownloadFile = NO;
             }
         }

@@ -16,9 +16,9 @@
 ///This method will download the file from JSON source url and used from
 //http://stackoverflow.com/questions/9446503/how-can-i-save-a-json-response-to-a-file-that-would-be-accessible-from-within-a
 
-+ (void) writeJsonToFile:(NSString *)stringURL authenticationToken:(NSString *)token
++ (void) writeJsonToFile:(NSString *)token
 {
-    stringURL = @"http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=";
+    NSString *stringURL = @"http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     //construct the url to down the json file from somethings like
     //http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=?xkdkofofofososos

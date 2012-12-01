@@ -10,6 +10,6 @@
 
 @interface GameInputOutput : NSObject
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray;
-+ (void) writeJsonToFile:(NSString *)stringURL authenticationToken:(NSString *)token;
++ (void) writeJsonToFile:(NSString *)token;
 + (BOOL)isDataSourceAvailable;
 @end
