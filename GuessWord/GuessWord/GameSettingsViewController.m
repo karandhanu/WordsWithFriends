@@ -37,7 +37,7 @@ bool hasDataConnection= NO;
 
 - (IBAction)doneEnterCredentials:(id)sender
 {
-     NSArray *arr = [GameSettingsViewController displayUserCredentials];
+    NSArray *arr = [GameSettingsViewController displayUserCredentials];
     NSString *token = @"";
     //1.download the file when user has done entering username and password
     //2. download the file from sever only if username and password is not bank
@@ -56,7 +56,7 @@ bool hasDataConnection= NO;
         {
             if([self saveUserCredentials:token])
             {
-                    //get the json file based on the username and password
+                //get the json file based on the username and password
                 [GameInputOutput writeJsonToFile:token];
                 [self performSegueWithIdentifier:@"doneCredentials" sender:self];
             }
@@ -70,7 +70,7 @@ bool hasDataConnection= NO;
 - (void) authenicateUserAccount
 {
     NSString* jsonRequest = [NSString stringWithFormat:@"{\"login\": {\"username\":\"%@\",\"password\":\"%@\",\"application\":\"my test app\",\"version\":\"0.0\"}}", username.text,password.text];
-
+    
     NSURL *url = [NSURL URLWithString:@"http://helpchildrenread.org/api/simplified/login"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -92,7 +92,7 @@ bool hasDataConnection= NO;
     NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
-   
+    
     NSData *userCredentials = allInfo;
     [userCredentials writeToFile:filePath atomically:YES];
     
@@ -140,6 +140,8 @@ bool hasDataConnection= NO;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [username setDelegate:self];
+    [password setDelegate:self];
     [self displayInternetConnectionStatus];
     
     
@@ -151,7 +153,7 @@ bool hasDataConnection= NO;
     
     NSString *name = [arr objectAtIndex:0];
     NSString *pass = [arr objectAtIndex:1];
-
+    
     username.text = name;
     password.text = pass;
     
@@ -199,7 +201,7 @@ bool hasDataConnection= NO;
     [userCredentials setObject:token forKey:@"authcode"];
 }
 
-//this method is drived from 
+//this method is drived from
 //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
 - (BOOL) saveUserCredentials:(NSString *)token
 {
@@ -232,7 +234,7 @@ bool hasDataConnection= NO;
         {
             username.text = @"";
             password.text = @"";
-
+            
             [userCredentials setObject:username.text forKey:@"username"];
             [userCredentials setObject:password.text forKey:@"password"];
             errorMessage.text = @"Invalid username or password";
@@ -264,11 +266,12 @@ bool hasDataConnection= NO;
     NSString *token = [userCredentials objectForKey:@"authcode"];
     return [NSArray arrayWithObjects:name,pass,token,nil];
 }
-- (IBAction)hideKeyboard:(id)sender
-{
-    [username resignFirstResponder];
-    [password resignFirstResponder];
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+	[textField resignFirstResponder];
+    
+	return YES;
+    
 }
-
-
 @end
