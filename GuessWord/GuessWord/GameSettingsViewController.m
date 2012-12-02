@@ -264,5 +264,11 @@ bool hasDataConnection= NO;
     NSString *token = [userCredentials objectForKey:@"authcode"];
     return [NSArray arrayWithObjects:name,pass,token,nil];
 }
+- (IBAction)hideKeyboard:(id)sender
+{
+    [username resignFirstResponder];
+    [password resignFirstResponder];
+}
+
 
 @end
