@@ -443,6 +443,11 @@
                                                 <action selector="doneEnterCredentials:" destination="qd0-6Y-gtM" id="G7Y-LJ-2rV"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="37d-ZF-CtC">
+                                            <connections>
+                                                <segue destination="2" kind="modal" id="3Ar-OQ-qxt"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1148,6 +1153,110 @@
         <image name="FunWithWordsBkgrd.png" width="640" height="960"/>
         <image name="Yellow_2_2.png" width="51" height="51"/>
     </resources>
+    <classes>
+        <class className="DevelopersInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DevelopersInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="PressedKaran:"/>
+                <relationship kind="outlet" name="PressedKaranDhanu" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GameSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneEnterCredentials:"/>
+                <relationship kind="action" name="rememberCredentials:"/>
+                <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="errorMessage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rememberMeToggle" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="GameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMainMenu:"/>
+                <relationship kind="action" name="playAgain:"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayCorrectWord" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter10" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter11" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter12" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter13" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter14" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter15" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter16" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter17" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter18" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter19" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter20" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter21" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter22" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter23" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter24" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter25" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter26" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="letter9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scoreCount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="screenUsername" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="HighScoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="highScore1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore10" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore7" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore8" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highScore9" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName10" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName7" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName8" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerName9" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LevelCompleteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LevelCompleteViewController.h"/>
+        </class>
+        <class className="PauseMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
