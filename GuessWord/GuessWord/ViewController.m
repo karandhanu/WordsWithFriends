@@ -48,7 +48,6 @@ bool shouldDownloadFile = YES;
             }
            
             //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
-            NSLog(@"%@",authToken);
             //download the file if authtoken is not empty
             if(![authToken isEqualToString:@""])
             {

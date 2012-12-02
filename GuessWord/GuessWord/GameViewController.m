@@ -90,7 +90,7 @@ int gameScore = 0;
 }
 
 //this creates the wordlist from the jsonfile that was downloaded when game was set up
-//by Team Red Panda
+//by this method is modified version of Team Red Panda
 - (void) loadGameData
 {
     NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
@@ -106,7 +106,6 @@ int gameScore = 0;
     {
         filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     }
-    
     [GameInputOutput gameDataFromJSON:filePath outputWordsTo:wordsArray outputSpellingsTo:spellingSequenceArray];
 }
 
@@ -131,10 +130,7 @@ int gameScore = 0;
     
     //initializing first word
     gameWord = [NSMutableString stringWithFormat:@"hello"];
-    
-    //all the words
-    //allWords = [NSArray arrayWithObjects:@"hello",@"hello",@"world",@"etc",nil];
-    
+       
     allWords = wordsArray;
     
     // initalizing number of tries a user has to complete the word
