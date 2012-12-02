@@ -89,18 +89,33 @@ bool hasDataConnection= NO;
     
     NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
     
-    NSData *userCredentials = allInfo;
-    [userCredentials writeToFile:filePath atomically:YES];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    
+    NSData *urlData = allInfo;
+    
+    [urlData writeToFile:pathToFile atomically:YES];
+    
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
+//    
+//    NSData *userCredentials = allInfo;
+//    [userCredentials writeToFile:filePath atomically:YES];
+    
     
     NSError *error;
-    NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];
+    
+    NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&error ];
+    
+    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     //get the log in information from the credentials file
     NSDictionary *login = [JSONDictionary objectForKey:@"login"];
     //get the auth_token
     NSDictionary *loginInfo = login;
+    NSLog(@"%@",login);
     
     if(loginInfo == NULL)
     {
@@ -263,16 +278,21 @@ bool hasDataConnection= NO;
 }
 
 //hides the key when return button on keyboard is pressed
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
 	[textField resignFirstResponder];
-    
 	return YES;
-    
 }
 
-- (IBAction)hideKeyboard {
+- (IBAction)hideKeyboard
+{
     [username resignFirstResponder];
     [password resignFirstResponder];
+}
+- (IBAction)signUp:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://helpchildrenread.org/users/sign_up"];
+    if (![[UIApplication sharedApplication] openURL:url])
+        NSLog(@"%@%@",@"Failed to open url:",[url description]);
 }
 @end
