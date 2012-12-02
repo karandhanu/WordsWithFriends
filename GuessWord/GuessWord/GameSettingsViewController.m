@@ -37,16 +37,18 @@ bool hasDataConnection= NO;
 
 - (IBAction)doneEnterCredentials:(id)sender
 {
-        //NSArray *arr = [GameSettingsViewController displayUserCredentials];
-    
+     NSArray *arr = [GameSettingsViewController displayUserCredentials];
+    NSString *token = @"";
     //1.download the file when user has done entering username and password
     //2. download the file from sever only if username and password is not bank
     //3. I need to find a to authenicate these usernames and passwords
     [self authenicateUserAccount];
-    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-    NSString *token = [userCredentials objectForKey:@"authcode"];
-
-    //NSString *token = [arr objectAtIndex:2];
+    //NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    //NSString *token = [userCredentials objectForKey:@"authcode"];
+    if(arr.count >2)
+    {
+        token = [arr objectAtIndex:2];
+    }
     NSLog(@"%@",token);
     if(![token isEqualToString:@"token"])
     {
