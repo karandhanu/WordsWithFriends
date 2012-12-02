@@ -24,7 +24,6 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
     
-    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     //construct the url to down the json file from somethings like
     //http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=?xkdkofofofososos
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, token]];
@@ -43,16 +42,7 @@
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray
 {
     NSError *error;
-    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
-    //NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
-    
-    NSData *jsonData = [NSData dataWithContentsOfFile:pathToFile options:kNilOptions error:&error ];
-    
-    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath options:kNilOptions error:&error ];
     NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
     NSArray* latestWordlist = [JSONDictionary objectForKey:@"words"];

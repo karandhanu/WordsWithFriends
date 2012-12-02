@@ -93,8 +93,21 @@ int gameScore = 0;
 //by Team Red Panda
 - (void) loadGameData
 {
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
-    [GameInputOutput gameDataFromJSON:filepath outputWordsTo:wordsArray outputSpellingsTo:spellingSequenceArray];
+    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+    NSString *token = [userCredentials objectForKey:@"authcode"];
+    NSString *filePath = @"" ;
+    if(![token isEqualToString:@""])
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    }
+    else
+    {
+        filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
+    }
+    
+    [GameInputOutput gameDataFromJSON:filePath outputWordsTo:wordsArray outputSpellingsTo:spellingSequenceArray];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

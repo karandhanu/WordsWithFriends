@@ -86,13 +86,12 @@ bool hasDataConnection= NO;
 {
     NSMutableData *retrievedData = [NSMutableData data];
     [retrievedData appendData:data];
-    NSString *responseString = [[NSString alloc] initWithData:retrievedData encoding:NSUTF8StringEncoding];
     //NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
     
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+   // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSString *documentsDirectory = [paths objectAtIndex:0];
+   // NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
     
     // NSData *urlData = allInfo;
     
@@ -113,19 +112,18 @@ bool hasDataConnection= NO;
     // NSLog(@"%@",urlData);
     //NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
     NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:retrievedData options:0 error:&error];
-    
-    NSLog(@"%@",JSONDictionary);
     //get the log in information from the credentials file
     NSDictionary *login = [JSONDictionary objectForKey:@"login"];
     //get the auth_token
     NSDictionary *loginInfo = login;
-    NSLog(@"%@",login);
     
     if(loginInfo == NULL)
     {
         errorMessage.text = @"Invalid username or password";
         errorMessage.hidden = NO;
         NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+        [userCredentials setObject:@"" forKey:@"username"];
+        [userCredentials setObject:@"" forKey:@"password"];
         [userCredentials setObject:@"" forKey:@"authcode"];
     }
     else
