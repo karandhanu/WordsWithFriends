@@ -39,16 +39,17 @@ bool shouldDownloadFile = YES;
     {
         if (shouldDownloadFile)
         {
-            NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-            //NSArray *arr = [GameSettingsViewController displayUserCredentials];
-            //NSString *user = [arr objectAtIndex:0];
-            //NSString *pass = [arr objectAtIndex:1];
-             NSString *authToken = [userCredentials objectForKey:@"authcode"];
-           // NSString *authToken = @"hi";//[arr objectAtIndex:2];
-            //get the username and password stored in NSuserDefaults
-            //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
+            NSArray *arr = [GameSettingsViewController displayUserCredentials];
             
-            //download the file if username is not empty
+            NSString *authToken = @"";
+            if(arr.count > 2)
+            {
+                 authToken = [arr objectAtIndex:2];
+            }
+           
+            //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
+            NSLog(@"%@",authToken);
+            //download the file if authtoken is not empty
             if(![authToken isEqualToString:@""])
             {
                 //get the json file based on the username and password
