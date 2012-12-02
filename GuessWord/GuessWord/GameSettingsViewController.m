@@ -43,8 +43,6 @@ bool hasDataConnection= NO;
     //2. download the file from sever only if username and password is not bank
     //3. I need to find a to authenicate these usernames and passwords
     [self authenicateUserAccount];
-    //NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-    //NSString *token = [userCredentials objectForKey:@"authcode"];
     if(arr.count >2)
     {
         token = [arr objectAtIndex:2];
@@ -57,7 +55,7 @@ bool hasDataConnection= NO;
             if([self saveUserCredentials:token])
             {
                 //get the json file based on the username and password
-                [GameInputOutput writeJsonToFile:token];
+                //[GameInputOutput writeJsonToFile:token];
                 [self performSegueWithIdentifier:@"doneCredentials" sender:self];
             }
         }
