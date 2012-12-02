@@ -108,10 +108,13 @@ bool hasDataConnection= NO;
     {
         errorMessage.text = @"Invalid username or password";
         errorMessage.hidden = NO;
+        NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
+        [userCredentials setObject:@"" forKey:@"authcode"];
     }
     else
     {
         NSString *authCode = [loginInfo objectForKey:@"auth_token"];
+        [GameInputOutput writeJsonToFile:authCode];
         [self saveUserCredentials:authCode];
     }
 }
@@ -158,7 +161,7 @@ bool hasDataConnection= NO;
     password.text = pass;
     
     //authenicate user
-    [self authenicateUserAccount];
+    //[self authenicateUserAccount];
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,12 +197,6 @@ bool hasDataConnection= NO;
     }
 }
 
--(void) saveAuthToken
-{
-    NSString *token = @"43rg78pS6HX0c2g5pDL1XQ";
-    NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
-    [userCredentials setObject:token forKey:@"authcode"];
-}
 
 //this method is drived from
 //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
@@ -267,11 +264,17 @@ bool hasDataConnection= NO;
     return [NSArray arrayWithObjects:name,pass,token,nil];
 }
 
+//hides the key when return button on keyboard is pressed
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
 	[textField resignFirstResponder];
     
 	return YES;
     
+}
+
+- (IBAction)hideKeyboard {
+    [username resignFirstResponder];
+    [password resignFirstResponder];
 }
 @end
