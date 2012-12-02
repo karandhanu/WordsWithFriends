@@ -19,7 +19,12 @@
 + (void) writeJsonToFile:(NSString *)token
 {
     NSString *stringURL = @"http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=";
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    
+    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"json"];
     //construct the url to down the json file from somethings like
     //http://helpchildrenread.org/api/simplified/projects/tok_pisin/words?lesson=1&auth_token=?xkdkofofofososos
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, token]];
@@ -28,7 +33,7 @@
     //attempt to download live data
     if (urlData)
     {
-        [urlData writeToFile:filePath atomically:YES];
+        [urlData writeToFile:pathToFile atomically:YES];
     }
 }
 
@@ -38,8 +43,17 @@
 + (void)gameDataFromJSON:(NSString *)filePath outputWordsTo:(NSMutableArray *)outputWordsArray outputSpellingsTo:(NSMutableArray *)outputSpellingsArray
 {
     NSError *error;
-    NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];
+    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
+    //NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:&error];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    
+    NSData *jsonData = [NSData dataWithContentsOfFile:pathToFile options:kNilOptions error:&error ];
+    
+    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
     NSArray* latestWordlist = [JSONDictionary objectForKey:@"words"];
     
@@ -48,6 +62,7 @@
         NSDictionary *wordNameDictionary = [latestWordlist objectAtIndex:i];
         [outputWordsArray addObject:[wordNameDictionary objectForKey:@"name"]];
     }
+    
     for (int i = 0; i < latestWordlist.count; i++)
     {
         NSDictionary *spellingPatternDictionary = [latestWordlist objectAtIndex:i];

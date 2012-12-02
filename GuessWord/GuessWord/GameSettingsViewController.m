@@ -86,31 +86,35 @@ bool hasDataConnection= NO;
 {
     NSMutableData *retrievedData = [NSMutableData data];
     [retrievedData appendData:data];
-    
-    NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
+    NSString *responseString = [[NSString alloc] initWithData:retrievedData encoding:NSUTF8StringEncoding];
+    //NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
     
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
     
-    NSData *urlData = allInfo;
+    // NSData *urlData = allInfo;
     
-    [urlData writeToFile:pathToFile atomically:YES];
+    //[urlData writeToFile:pathToFile atomically:YES];
     
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
-//    
-//    NSData *userCredentials = allInfo;
-//    [userCredentials writeToFile:filePath atomically:YES];
+    //    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
+    //
+    //    NSData *userCredentials = allInfo;
+    //    [userCredentials writeToFile:filePath atomically:YES];
     
     
     NSError *error;
     
-    NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&error ];
-    
+    //NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+    //NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&error ];
+    //NSData *hello ;
     //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
-    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    // NSLog(@"%@",urlData);
+    //NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
+    NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:retrievedData options:0 error:&error];
+    
+    NSLog(@"%@",JSONDictionary);
     //get the log in information from the credentials file
     NSDictionary *login = [JSONDictionary objectForKey:@"login"];
     //get the auth_token
