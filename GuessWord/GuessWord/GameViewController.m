@@ -10,6 +10,7 @@
 #import "LevelCompleteViewController.h"
 #import "GameInputOutput.h"
 #import "HighScoreViewController.h"
+#include <QuartzCore/QuartzCore.h>
 
 @interface GameViewController ()
 
@@ -209,6 +210,7 @@ int gameScore = 0;
     UILabel *myDisplay4 = self.display4;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
+    UILabel *myDisplay7 = self.display7;
     
     [myDisplay setHidden:YES];
     [myDisplay2 setHidden:YES];
@@ -216,6 +218,7 @@ int gameScore = 0;
     [myDisplay4 setHidden:YES];
     [myDisplay5 setHidden:YES];
     [myDisplay6 setHidden:YES];
+    [myDisplay7 setHidden:YES];
     
     [myDisplay setText:@""];
     [myDisplay2 setText:@""];
@@ -223,6 +226,16 @@ int gameScore = 0;
     [myDisplay4 setText:@""];
     [myDisplay5 setText:@""];
     [myDisplay6 setText:@""];
+    [myDisplay7 setText:@""];
+    
+    myDisplay.layer.borderWidth = 2.0;
+    myDisplay2.layer.borderWidth = 2.0;
+    myDisplay3.layer.borderWidth = 2.0;
+    myDisplay4.layer.borderWidth = 2.0;
+    myDisplay5.layer.borderWidth = 2.0;
+    myDisplay6.layer.borderWidth = 2.0;
+    myDisplay7.layer.borderWidth = 2.0;
+
     
     
     if(wordLength == 3)
@@ -254,6 +267,16 @@ int gameScore = 0;
         [myDisplay4 setHidden:NO];
         [myDisplay5 setHidden:NO];
         [myDisplay6 setHidden:NO];  
+    }
+    else if(wordLength == 7)
+    {
+        [myDisplay setHidden:NO];
+        [myDisplay2 setHidden:NO];
+        [myDisplay3 setHidden:NO];
+        [myDisplay4 setHidden:NO];
+        [myDisplay5 setHidden:NO];
+        [myDisplay6 setHidden:NO];
+        [myDisplay7 setHidden:NO];
     }
 }
 
@@ -332,6 +355,7 @@ int gameScore = 0;
     UILabel *myDisplay4 = self.display4;
     UILabel *myDisplay5 = self.display5;
     UILabel *myDisplay6 = self.display6;
+    UILabel *myDisplay7 = self.display7;
     
     //this is converting gameWord to an array so I can itirate over
     NSMutableArray *lettersArray = [[NSMutableArray alloc] initWithCapacity:[gameWord length]];
@@ -429,7 +453,14 @@ int gameScore = 0;
                 {
                     myDisplay6.text =  letter;
                 }
-                
+                if(trackIndexId == 6)
+                {
+                    myDisplay7.text =  letter;
+                }
+                else if(trackSecondIndexForSameLetter == 6)
+                {
+                    myDisplay7.text =  letter;
+                }
                 //disabled the button
                 [sender setEnabled:NO];
                 
@@ -480,6 +511,7 @@ int gameScore = 0;
         [myDisplay4 setHidden:YES];
         [myDisplay5 setHidden:YES];
         [myDisplay6 setHidden:YES];
+        [myDisplay7 setHidden:YES];
         [self checkNumberofWordsUserCompleteInLevel:isWordComplete];
         [self moveToNextWord];
     }

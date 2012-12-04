@@ -120,10 +120,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Write Instruction to Play Game " id="iXo-nl-b81">
-                                <rect key="frame" x="30" y="93" width="260" height="318"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="iXo-nl-b81">
+                                <rect key="frame" x="30" y="63" width="260" height="377"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Step 1: Hit “New Game”Step 2: You will now be in the main in-game window. Simply tap the character you wish to place in the word and an immediate response will notify your attempt. You may do this until you have chosen enough letters to fill the word length.Step 3 (Optional): You may wish to skip a word.Step 4 (Optional): A high score will be provided for the game currently being played.Step 5: You can sing up for Synphony by going to preferences screen to get latest words of your choice.Step 5: Tap that Home button and start a New Game! Best of luck and enjoy,</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -726,7 +727,7 @@
                                     <action selector="buttonPressed:" destination="15q-aP-Qdc" eventType="touchUpInside" id="fOs-F6-lNr"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kCK-f8-WES">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kCK-f8-WES">
                                 <rect key="frame" x="30" y="195" width="32" height="31"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1027,37 +1028,44 @@
                                     <action selector="buttonPressed:" destination="15q-aP-Qdc" eventType="touchUpInside" id="AHW-hH-p74"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RmZ-ZU-1RT">
-                                <rect key="frame" x="110" y="195" width="32" height="31"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RmZ-ZU-1RT">
+                                <rect key="frame" x="97" y="195" width="32" height="31"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jNv-Ki-yiU">
-                                <rect key="frame" x="70" y="195" width="32" height="31"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jNv-Ki-yiU">
+                                <rect key="frame" x="63" y="195" width="32" height="31"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mpw-XX-BJ5">
-                                <rect key="frame" x="150" y="195" width="32" height="31"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mpw-XX-BJ5">
+                                <rect key="frame" x="130" y="195" width="32" height="31"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kqD-In-1UD">
-                                <rect key="frame" x="190" y="195" width="32" height="31"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kqD-In-1UD">
+                                <rect key="frame" x="164" y="195" width="32" height="31"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSR-Uv-J1b">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSR-Uv-J1b">
+                                <rect key="frame" x="197" y="195" width="32" height="31"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lmx-Tb-8p6">
                                 <rect key="frame" x="230" y="195" width="32" height="31"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1070,7 +1078,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GuL-aD-BAg">
-                                <rect key="frame" x="114" y="268" width="77" height="31"/>
+                                <rect key="frame" x="113" y="268" width="77" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1122,6 +1130,7 @@
                         <outlet property="display4" destination="mpw-XX-BJ5" id="ZMb-Or-tnY"/>
                         <outlet property="display5" destination="kqD-In-1UD" id="c9i-TR-TaO"/>
                         <outlet property="display6" destination="jSR-Uv-J1b" id="vzW-pV-ang"/>
+                        <outlet property="display7" destination="Lmx-Tb-8p6" id="4EI-IS-0wW"/>
                         <outlet property="displayCorrectWord" destination="Y1s-SR-io8" id="fmW-hf-1Wi"/>
                         <outlet property="displayTotalTries" destination="GuL-aD-BAg" id="lZ4-PH-BiV"/>
                         <outlet property="letter1" destination="Zmq-8E-C8d" id="nL2-jH-Pek"/>
@@ -1240,6 +1249,7 @@
                 <relationship kind="outlet" name="display4" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display5" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display6" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="display7" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="displayCorrectWord" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="displayTotalTries" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="letter1" candidateClass="UIButton"/>
@@ -1319,6 +1329,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iZd-k5-aRQ"/>
+        <segue reference="EBO-bg-m2A"/>
     </inferredMetricsTieBreakers>
 </document>

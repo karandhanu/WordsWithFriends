@@ -46,6 +46,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayCorrectWord;
 @property (weak, nonatomic) IBOutlet UINavigationItem *screenUsername;
 @property (weak, nonatomic) IBOutlet UILabel *scoreCount;
+@property (weak, nonatomic) IBOutlet UILabel *display7;
 
 
 @end
