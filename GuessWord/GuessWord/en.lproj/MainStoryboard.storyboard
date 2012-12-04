@@ -438,7 +438,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Game Settings" id="g79-MG-HjI">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" id="FRE-sH-uqt">
+                                        <barButtonItem key="leftBarButtonItem" title="Update" id="FRE-sH-uqt">
                                             <connections>
                                                 <action selector="doneEnterCredentials:" destination="qd0-6Y-gtM" id="G7Y-LJ-2rV"/>
                                             </connections>
