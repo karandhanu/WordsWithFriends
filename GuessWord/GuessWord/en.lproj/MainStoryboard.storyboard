@@ -121,10 +121,23 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="iXo-nl-b81">
-                                <rect key="frame" x="30" y="63" width="260" height="377"/>
+                                <rect key="frame" x="30" y="59" width="260" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Step 1: Hit “New Game”Step 2: You will now be in the main in-game window. Simply tap the character you wish to place in the word and an immediate response will notify your attempt. You may do this until you have chosen enough letters to fill the word length.Step 3 (Optional): Click "Next" to skip or move to a new a word.Step 4 (Optional): A high score will be provided for the game currently being played.Step 5: You can signup up for Synphony by going to preferences screen to get latest words of your choice.Step 5: Tap that Home button and start a New Game! Best of luck and enjoy,</mutableString>
+                                <string key="text">Step 1: Hit “New Game”
+
+Step 2: You will now be in the main in-game window. Simply tap the character you wish to place in the word and an immediate response will notify your attempt. You may do this until you have chosen enough letters to fill the word length.
+
+Step 3 (Optional): Click "Next" to skip or move to a new a word.
+
+Step 4 (Optional): A high score will be provided for the game currently being played.
+
+Step 5: You can signup up for Synphony by going to preferences screen to get latest words of your choice.
+
+Step 5: Tap that Home button and start a New Game! 
+
+Best of luck and enjoy,
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -453,13 +466,13 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="OAj-kg-vjD">
-                                <rect key="frame" x="57" y="111" width="195" height="30"/>
+                                <rect key="frame" x="63" y="111" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="Z0d-Tr-EA7">
-                                <rect key="frame" x="57" y="149" width="195" height="30"/>
+                                <rect key="frame" x="63" y="149" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -508,7 +521,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oS5-PY-8Cg">
-                                <rect key="frame" x="254" y="109" width="73" height="103"/>
+                                <rect key="frame" x="260" y="109" width="67" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -523,7 +536,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ozn-Ke-nFu">
-                                <rect key="frame" x="0.0" y="109" width="56" height="106"/>
+                                <rect key="frame" x="0.0" y="109" width="63" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -538,7 +551,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wfe-E1-GKM">
-                                <rect key="frame" x="57" y="372" width="195" height="31"/>
+                                <rect key="frame" x="63" y="369" width="195" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
@@ -1220,12 +1233,16 @@
         <class className="DevelopersInfoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DevelopersInfoViewController.h"/>
             <relationships>
+                <relationship kind="action" name="PressedKaran:"/>
                 <relationship kind="outlet" name="PressedKaranDhanu" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="GameSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doneEnterCredentials:"/>
+                <relationship kind="action" name="rememberCredentials:"/>
+                <relationship kind="action" name="signUp:"/>
                 <relationship kind="outlet" name="connectedToData" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="errorMessage" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -1236,8 +1253,6 @@
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
-                <relationship kind="action" name="backToMainMenu:"/>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="playAgain:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="display2" candidateClass="UILabel"/>
@@ -1308,6 +1323,9 @@
         </class>
         <class className="PauseMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PauseMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Resume:"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -1322,6 +1340,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iZd-k5-aRQ"/>
+        <segue reference="vVy-rs-P76"/>
     </inferredMetricsTieBreakers>
 </document>

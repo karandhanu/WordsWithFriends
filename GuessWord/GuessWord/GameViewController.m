@@ -481,7 +481,7 @@ int gameScore = 0;
                     displayCorrectWord.text = gameWord.uppercaseString;
                     displayCorrectWord.enabled = YES;
                     displayCorrectWord.hidden = NO;
-                    displayCorrectWord.textColor = [UIColor redColor];
+                    displayCorrectWord.textColor = [UIColor whiteColor];
                 }
             }
         }
