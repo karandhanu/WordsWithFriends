@@ -96,7 +96,7 @@ int gameScore = 0;
     NSUserDefaults *userCredentials = [NSUserDefaults standardUserDefaults];
     NSString *token = [userCredentials objectForKey:@"authcode"];
     NSString *filePath = @"" ;
-    if(![token isEqualToString:@""])
+    if(![token isEqualToString:@""] && [token length] != 0)
     {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];

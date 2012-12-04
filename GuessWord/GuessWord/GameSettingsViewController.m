@@ -86,31 +86,8 @@ bool hasDataConnection= NO;
 {
     NSMutableData *retrievedData = [NSMutableData data];
     [retrievedData appendData:data];
-    //NSMutableString *allInfo = [[NSMutableString alloc] initWithData:retrievedData encoding:NSASCIIStringEncoding];
-    
-    
-   // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //NSString *documentsDirectory = [paths objectAtIndex:0];
-   // NSString *pathToFile = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
-    
-    // NSData *urlData = allInfo;
-    
-    //[urlData writeToFile:pathToFile atomically:YES];
-    
-    //    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"credentials" ofType:@"json"];
-    //
-    //    NSData *userCredentials = allInfo;
-    //    [userCredentials writeToFile:filePath atomically:YES];
-    
-    
+        
     NSError *error;
-    
-    //NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
-    //NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&error ];
-    //NSData *hello ;
-    //NSData* JSONData = [NSData dataWithContentsOfFile:filePath];
-    // NSLog(@"%@",urlData);
-    //NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
     NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:retrievedData options:0 error:&error];
     //get the log in information from the credentials file
     NSDictionary *login = [JSONDictionary objectForKey:@"login"];
@@ -168,15 +145,14 @@ bool hasDataConnection= NO;
     //http://stackoverflow.com/questions/782451/iphone-sdk-load-save-settings
     //display the username, password
     NSArray *arr = [GameSettingsViewController displayUserCredentials];
-    
-    NSString *name = [arr objectAtIndex:0];
-    NSString *pass = [arr objectAtIndex:1];
-    
-    username.text = name;
-    password.text = pass;
-    
-    //authenicate user
-    //[self authenicateUserAccount];
+    if(arr.count > 0)
+    {
+        NSString *name = [arr objectAtIndex:0];
+        NSString *pass = [arr objectAtIndex:1];
+        
+        username.text = name;
+        password.text = pass;
+    }
 }
 
 - (void)didReceiveMemoryWarning
