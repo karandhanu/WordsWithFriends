@@ -202,7 +202,7 @@ bool hasDataConnection= NO;
         if (
             (![username.text isEqualToString:@""]) &&
             (![password.text isEqualToString:@""] && ![password.text isEqualToString:@"password"]) &&
-            (![token isEqualToString:@""] || ![token isEqualToString:@"token"])
+            (![token isEqualToString:@""] || ![token isEqualToString:@"token"] ||[token length] != 0)
             )
         {
             [userCredentials setObject:username.text forKey:@"username"];
